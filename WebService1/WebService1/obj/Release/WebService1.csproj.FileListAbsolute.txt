@@ -1,0 +1,6 @@
+F:\learn\VSWorkPlace\WebService1\WebService1\bin\WebService1.dll.config
+F:\learn\VSWorkPlace\WebService1\WebService1\bin\WebService1.dll
+F:\learn\VSWorkPlace\WebService1\WebService1\bin\WebService1.pdb
+F:\learn\VSWorkPlace\WebService1\WebService1\obj\Release\WebService1.csprojResolveAssemblyReference.cache
+F:\learn\VSWorkPlace\WebService1\WebService1\obj\Release\WebService1.dll
+F:\learn\VSWorkPlace\WebService1\WebService1\obj\Release\WebService1.pdb
