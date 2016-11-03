@@ -2,6 +2,7 @@ package com.example.dell.dbtest;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,24 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn1;
     private Button btn2;
+    private View loginView;
     private String result;
+
+    private String xml = "<ArrayOfString xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://tempuri.org/\">\n" +
+            "<string>0001</string>\n" +
+            "<string>Test1</string>\n" +
+            "<string>Hello</string>\n" +
+            "<string/>\n" +
+            "<string>1996/1/1 0:00:00</string>\n" +
+            "<string>test</string>\n" +
+            "<string>M</string>\n" +
+            "<string>ShangHai</string>\n" +
+            "<string>0</string>\n" +
+            "<string>0</string>\n" +
+            "<string>0</string>\n" +
+            "<string>0001</string>\n" +
+            "</ArrayOfString>";
+
 
     Handler handler = new Handler(){
         @Override
@@ -57,8 +75,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        loginView = getLayoutInflater().inflate(R.layout.login_layout,null);
         btn2 = (Button)findViewById(R.id.main_2login_btn);
-
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.ActivityLogin");
+                startActivity(intent);
+            }
+        });
     }
 
     /*private void BtnClick() {

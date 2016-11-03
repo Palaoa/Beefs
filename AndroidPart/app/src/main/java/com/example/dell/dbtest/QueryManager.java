@@ -1,5 +1,8 @@
 package com.example.dell.dbtest;
 
+import android.app.Service;
+import android.os.Handler;
+
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
@@ -9,24 +12,39 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 /**
  * Created by dell on 2016/10/31.
  */
 
-public class QueryManager
+public class QueryManager extends Service
 {
     private static String SERVICE_NS = "http://tempuri.org/";
     private static String SERVICE_URL = "http://121.42.12.186:803/UserService.asmx";
     private static HttpTransportSE ht;
     private static SoapSerializationEnvelope envelope;
     private static QueryManager instance;
-    private QueryManager()
+    private static Handler handler;
+
+
+    /*private QueryManager()
     {
         ht = new HttpTransportSE(SERVICE_URL);
         ht.debug = true;
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.dotNet = true;
-    }
+        handler = new Handler()
+        {
+            @Override
+            public void handleMessage(Message msg)
+            {
+
+            }
+        };
+
+    }*/
 
     public static QueryManager getQueryManager()
     {
@@ -38,7 +56,7 @@ public class QueryManager
     public ArrayList<String> query(String methodName, ArrayList<String> pair)
     {
         final String SOAP_ACTION = SERVICE_NS + methodName;
-        final ArrayList<String> result = new ArrayList<String>();
+        final ArrayList<String> result = new ArrayList<>();
         if(pair.size() % 2 != 0)
         {
             result.add("Error");
@@ -47,11 +65,15 @@ public class QueryManager
 
         SoapObject soapObject = new SoapObject(SERVICE_NS,methodName);
         // add properties
-
+        for(int i=0,size=pair.size()/2;i<size;i++)
+        {
+            soapObject.addProperty(pair.get(i),pair.get(i+1));
+        }
         envelope.bodyOut = soapObject;
         new Thread() {
             @Override
-            public void run() {
+            public void run()
+            {
                 try {
                     //调用WebService，调用对象的call()方法，并以SoapSerializationEnvelope作为参数调用远程Web Service
                     ht.call(SOAP_ACTION, envelope);

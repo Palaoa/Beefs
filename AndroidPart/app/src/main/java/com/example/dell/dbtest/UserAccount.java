@@ -6,7 +6,7 @@ package com.example.dell.dbtest;
 
 public class UserAccount {
     private static UserAccount instance;
-    private static String userID;
+    private static UserModel currentUser;
     private static int loginTime;
 
     public UserAccount getInstance()
@@ -16,20 +16,21 @@ public class UserAccount {
         return  instance;
     }
 
-    public void setUserID(String str)
+    public void setUser(UserModel user)
     {
-        if(userID == null)
+        if(currentUser == null)
         {
-            userID = new String(str);
-            return;
+            currentUser = new UserModel();
+
         }
-        userID = str;
+        currentUser.user_id = user.user_id;
+        currentUser.nickname = user.nickname;
+        currentUser.password = user.password;
+        return;
     }
 
-    public String getUserID()
+    public UserModel getUser()
     {
-        if(userID == null)
-            return "";
-        return userID;
+        return currentUser;
     }
 }
