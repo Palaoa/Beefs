@@ -24,7 +24,96 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class XMLParcer
 {
-    /*public static ArrayList<UserModel> parseUser(String string)throws Exception
+    // Hen Sha Bi De Fang Fa!!!
+    public static ArrayList<UserModel> parseUser(InputStream inStream)throws Exception
+    {
+        int count = 1;
+        //  int max = 12;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+
+        ArrayList<UserModel> result = new ArrayList<>();
+        UserModel model = new UserModel();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(inStream);
+        Element root = document.getDocumentElement();
+        NodeList nodes = root.getElementsByTagName("Table");
+        for(int i = 0 ;i < nodes.getLength();i++)
+        {
+            Element element = (Element)nodes.item(i);
+            NodeList nl = element.getChildNodes();
+            for (int j = 0 ;j < nl.getLength() ;j++)
+            {
+                Node childNode = nl.item(j);
+                if(childNode.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    Element childElement = (Element)childNode;
+                    switch(count)
+                    {
+                        case 1:  // user_id
+                            model.user_id = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 2:  // nickname
+                            model.nickname = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 3:  // slogan
+                            model.slogan = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 4:  // avatar
+                            model.avatar = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 5:  // birthday
+                            model.birthday = new java.util.Date();
+                            model.birthday = sdf.parse(childElement.getFirstChild().getNodeValue());
+                            count++;
+                            break;
+                        case 6:  // occupation
+                            model.occupation = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 7:  // gender
+                            model.gender = childElement.getFirstChild().getNodeValue().charAt(0);
+                            count++;
+                            break;
+                        case 8:  // address
+                            model.address = childElement.getFirstChild().getNodeValue();
+                            count++;
+                            break;
+                        case 9:  // grade
+                            model.grade = Integer.parseInt(childElement.getFirstChild().getNodeValue());
+                            count++;
+                            break;
+                        case 10:  // coin
+                            model.coin = Integer.parseInt(childElement.getFirstChild().getNodeValue());
+                            count++;
+                            break;
+                        case 11:  // contribution
+                            model.contribution = Integer.parseInt(childElement.getFirstChild().getNodeValue());
+                            count++;
+                            break;
+                        case 12:  // password
+                            model.password = childElement.getFirstChild().getNodeValue();
+                            count = 1;
+                            result.add(model);
+                            break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}
+
+
+
+
+
+
+/*public static ArrayList<UserModel> parseUser(String string)throws Exception
     {
         ArrayList<UserModel> result = null;
         UserModel model = new UserModel();
@@ -122,88 +211,3 @@ public class XMLParcer
         return result;
 
     }*/
-
-
-    // Hen Sha Bi De Fang Fa!!!
-    public static ArrayList<UserModel> parseUser(InputStream inStream)throws Exception
-    {
-        int count = 1;
-        //  int max = 12;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
-
-        ArrayList<UserModel> result = new ArrayList<>();
-        UserModel model = new UserModel();
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(inStream);
-        Element root = document.getDocumentElement();
-        NodeList nodes = root.getElementsByTagName("Table");
-        for(int i = 0 ;i < nodes.getLength();i++)
-        {
-            Element element = (Element)nodes.item(i);
-            NodeList nl = element.getChildNodes();
-            for (int j = 0 ;j < nl.getLength() ;j++)
-            {
-                Node childNode = nl.item(j);
-                if(childNode.getNodeType() == Node.ELEMENT_NODE)
-                {
-                    Element childElement = (Element)childNode;
-                    switch(count)
-                    {
-                        case 1:  // user_id
-                            model.user_id = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 2:  // nickname
-                            model.nickname = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 3:  // slogan
-                            model.slogan = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 4:  // avatar
-                            model.avatar = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 5:  // birthday
-                            model.birthday = new java.util.Date();
-                            model.birthday = sdf.parse(childElement.getFirstChild().getNodeValue());
-                            count++;
-                            break;
-                        case 6:  // occupation
-                            model.occupation = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 7:  // gender
-                            model.gender = childElement.getFirstChild().getNodeValue().charAt(0);
-                            count++;
-                            break;
-                        case 8:  // address
-                            model.address = childElement.getFirstChild().getNodeValue();
-                            count++;
-                            break;
-                        case 9:  // grade
-                            model.grade = Integer.parseInt(childElement.getFirstChild().getNodeValue());
-                            count++;
-                            break;
-                        case 10:  // coin
-                            model.coin = Integer.parseInt(childElement.getFirstChild().getNodeValue());
-                            count++;
-                            break;
-                        case 11:  // contribution
-                            model.contribution = Integer.parseInt(childElement.getFirstChild().getNodeValue());
-                            count++;
-                            break;
-                        case 12:  // password
-                            model.password = childElement.getFirstChild().getNodeValue();
-                            count = 1;
-                            result.add(model);
-                            break;
-                    }
-                }
-            }
-        }
-        return result;
-    }
-}
