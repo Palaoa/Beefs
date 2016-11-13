@@ -23,7 +23,7 @@ public class ActivityMyStory extends MyActivity
     {
         super.onCreate(savedInstanceState);
         name = "ActivityMyStory";
-        setContentView(R.layout.mystory_layout);
+        setContentView(R.layout.mystory_all_layout);
         ActivityManager.getActivityManager().addActivity(this);
 
     }

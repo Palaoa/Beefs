@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBOperation.cs" />
+    <Compile Include="Model\HouseModel.cs" />
     <Compile Include="Model\MemoryModel.cs" />
+    <Compile Include="Model\StoryModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Model\UserSecurityModel.cs" />
     <Compile Include="UserService.asmx.cs">

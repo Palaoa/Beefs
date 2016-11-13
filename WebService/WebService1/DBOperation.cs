@@ -40,10 +40,10 @@ namespace STWebService
         {
             List<UserModel> list = new List<UserModel>();
             string sql = "select * from user";
-            MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
-            MySqlDataReader reader = cmd.ExecuteReader();
             try
             {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
                 int i = 0;
                 while (reader.Read())
                 {
@@ -62,15 +62,12 @@ namespace STWebService
                     list[i].password = reader[11].ToString();
                     i++;
                 }
+                reader.Close();
+                cmd.Dispose();
             }
             catch (Exception)
             {
                 
-            }
-            finally
-            {
-                reader.Close();
-                cmd.Dispose();
             }
             return list;
 
@@ -79,26 +76,67 @@ namespace STWebService
         public int countUser()
         {
             string sql = "select count(user_id) from user";
-            MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            int result = -1;
             try
             {
-
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
-                    return Int32.Parse(reader[0].ToString());
+                {
+                    result = Int32.Parse(reader[0].ToString()); 
+                }
                 reader.Close();
                 cmd.Dispose();
             }
             catch(Exception)
             {
-                return -1;
+                
             }
-            finally
+            return result;
+        }
+
+        public int countStory(String user_id)
+        {
+            string sql = "select count(story_id) from story where user_id = '" + user_id + "'";
+            int result = -1;
+            try
             {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    result = Int32.Parse(reader[0].ToString());
+                }
                 reader.Close();
                 cmd.Dispose();
             }
-            return -1;
+            catch (Exception)
+            {
+
+            }
+            return result;
+        }
+
+        public int countHouse(String user_id)
+        {
+            string sql = "select count(house_id) from house where user_id = '" + user_id + "'";
+            int result = -1;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    result = Int32.Parse(reader[0].ToString());
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception)
+            {
+
+            }
+            return result;
         }
         
         public List<string> queryUser(String nickname)
@@ -109,20 +147,23 @@ namespace STWebService
                 string sql = "select * from user where nickname = '" + nickname + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    list.Add(reader[0].ToString());
-                    list.Add(reader[1].ToString());
-                    list.Add(reader[2].ToString());
-                    list.Add(reader[3].ToString());
-                    list.Add(reader[4].ToString());
-                    list.Add(reader[5].ToString());
-                    list.Add(reader[6].ToString());
-                    list.Add(reader[7].ToString());
-                    list.Add(reader[8].ToString());
-                    list.Add(reader[9].ToString());
-                    list.Add(reader[10].ToString());
-                    list.Add(reader[11].ToString());
+                    while (reader.Read())
+                    {
+                        list.Add(reader[0].ToString());
+                        list.Add(reader[1].ToString());
+                        list.Add(reader[2].ToString());
+                        list.Add(reader[3].ToString());
+                        list.Add(reader[4].ToString());
+                        list.Add(reader[5].ToString());
+                        list.Add(reader[6].ToString());
+                        list.Add(reader[7].ToString());
+                        list.Add(reader[8].ToString());
+                        list.Add(reader[9].ToString());
+                        list.Add(reader[10].ToString());
+                        list.Add(reader[11].ToString());
+                    }
                 }
                 reader.Close();
                 cmd.Dispose();
@@ -137,27 +178,166 @@ namespace STWebService
 
         public bool queryExistUser(String nickname)
         {
+            bool result = false;
             try
             {
                 string sql = "exist(select * from user where user.nickname = '" + nickname + ")";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
-                if (reader[0] == "true")
+                if (reader.HasRows && reader[0] == "true")
                 {
-                    reader.Close();
-                    cmd.Dispose();
-                    return true;
+                    result = true;
                 }
                 reader.Close();
                 cmd.Dispose();
-                return false;
+                
             }
             catch(Exception)
             {
 
             }
-            return false;
+            return result;
+        }
+
+        public bool queryExistStory(String st_id)
+        {
+            bool result = false;
+            try
+            {
+                string sql = "exist(select * from story where story_id = '" + st_id + ")";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows && reader[0] == "true")
+                {
+                    result = true;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                
+                
+            }
+            return result;
+        }
+
+        public List<Model.StoryModel> queryStory(String user_id)
+        {
+            List<Model.StoryModel> list = new List<Model.StoryModel>();
+            try
+            {
+                string sql = "select story_id,title,content from story where user_id = '" + user_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Model.StoryModel sm = new StoryModel();
+                if(reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        sm.story_id = reader[0].ToString();
+                        sm.title = reader[1].ToString();
+                        sm.content = reader[2].ToString();
+                        list.Add(sm);
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return list;
+        }
+
+        public List<Model.HouseModel> queryHouse(String user_id)
+        {
+            List<Model.HouseModel> list = new List<Model.HouseModel>();
+            try
+            {
+                string sql = "select house_id,city_id,address,limitation,info,state from house where user_id = '" + user_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Model.HouseModel hm = new HouseModel();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        hm.house_id = reader[0].ToString();
+                        hm.city_id = reader[1].ToString();
+                        hm.address = reader[2].ToString();
+                        hm.limitation = reader[3].ToString();
+                        hm.info = reader[4].ToString();
+                        hm.state = reader[5].ToString().ElementAt(0);
+                        hm.user_id = user_id;
+                        list.Add(hm);
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return list;
+        }
+
+        public bool queryExistUserStory(String user_id, String st_id, String password)
+        {
+            bool result = false;
+            try
+            {
+                string sql = "select story.story_id from story,user where story_id = '" + st_id + 
+                    "' and story.user_id = user.user_id = '" + user_id + "' and user.password = '" + password + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    result = true;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return result;
+        }
+
+        public bool queryExistUserHouse(String user_id, String house_id, String password)
+        {
+            bool result = false;
+            try
+            {
+                string sql = "select house.house_id from house,user where house_id = '" + house_id +
+                    "' and house.user_id = user.user_id = '" + user_id + "' and user.password = '" + password + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    result = true;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return result;
         }
 
         public bool insertUser(String user_id,String password,String nickname)
@@ -182,6 +362,42 @@ namespace STWebService
             try
             {
                 string sql = "insert into user_security(user_id) values('" + user_id + "')";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool insertStory(StoryModel sm)
+        {
+            try
+            {
+                string sql = "insert into story (story_id,user_id,title,content) values('" + sm.story_id + "','" + sm.user_id + "','" 
+                    + sm.title + "','" + sm.content + "')";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool insertHouse(HouseModel hm)
+        {
+            try
+            {
+                string sql = "insert into house (house_id,user_id,city_id,address,limitation,info) values('" + hm.house_id + "','" + hm.user_id + "','"
+                    + hm.city_id + "','" + hm.address + "','" + hm.limitation + "','" + hm.info + "')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -228,6 +444,28 @@ namespace STWebService
             }
         }
 
+        public bool queryExistUser(String user_id,String password)
+        {
+            bool result = false;
+            try
+            {
+                string sql = "select * from user where user_id = '" + user_id + "' and password = '" + password +"';";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader[0] != null)
+                {
+                    result = true;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                
+            }
+            return result;
+        }
         // meixie
         public bool updateUserSecurity(UserSecurityModel model)
         {
@@ -259,6 +497,59 @@ namespace STWebService
         public bool updateUserAvatar(String str)
         {
             return true;
+        }
+
+        public bool updateStory(StoryModel sm)
+        {
+            try
+            {
+                string sql = "update story set title = '" + sm.title + "',content = '" + sm.content + 
+                    "' where story_id = '" + sm.story_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return false;
+        }
+
+        public bool updateHouse(HouseModel hm)
+        {
+            try
+            {
+                string sql = "update house set city_id = '" + hm.city_id + "',address = '" + hm.address + "',limitation = '"
+                    + hm.limitation + "',info = '" +hm.info + "' where house_id = '" + hm.house_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                
+            }
+            return false;
+        }
+
+        public bool updateHouseState(String house_id, String state)
+        {
+            try
+            {
+                string sql = "update house set state = '" + state + "'where house_id = '" + house_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return false;
         }
     }  
 

@@ -12,8 +12,10 @@ import com.example.dell.dbtest.Models.UserModel;
 import com.example.dell.dbtest.QueryManager;
 import com.example.dell.dbtest.R;
 import com.example.dell.dbtest.UserAccount;
+import com.example.dell.dbtest.ResultParser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dell on 2016/10/31.
@@ -30,24 +32,37 @@ public class ActivityLogin extends MyActivity
     {
         String methodName = result.get(0);
         Intent intent = new Intent();
-        switch (methodName)
-        {
-            case "loginUser":
-                String str = result.get(1);
-                text.setText(str);
-                //
-                // Yao Gai
-                UserAccount.getInstance().setUser(new UserModel());
-                //  Fan Hui Main
-                intent.putExtra("ShowToast",true);
-                setResult(201,intent);
-                this.finish();
-                //
-                return;
+        try {
+            switch (methodName) {
+                case "loginUser":
+                    String str = result.get(1);
+                    //text.setText(str);
+                    List<UserModel> list = ResultParser.parseUser(str);
+                    if(list.size() != 0)
+                    {
+                        //UserAccount.getInstance().setUser(list.get(0));
+                    }
+
+                    //
+                    // Yao Gai
+                    UserModel um = new UserModel();
+                    um.user_id = "0001";
+                    UserAccount.getInstance().setUser(um);
+                    //  Fan Hui Main
+                    //intent.putExtra("ShowToast", true);
+                    //setResult(201, intent);
+                    //finish();
+                    //
+                    return;
+            }
         }
-        intent.putExtra("ShowToast",false);
-        setResult(201,intent);
-        this.finish();
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        //intent.putExtra("ShowToast",false);
+        //setResult(201,intent);
+        //finish();
     }
 
 
@@ -94,5 +109,12 @@ public class ActivityLogin extends MyActivity
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+
     }
 }

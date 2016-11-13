@@ -60,7 +60,7 @@ public class QueryManager extends AsyncTask<String, Integer, ArrayList<String>>
                 //获取服务器响应返回的SOAP消息，调用完成后，访问SoapSerializationEnvelope对象的bodyIn属性，该属性返回一个
                 //SoapObject对象，该对象就代表了Web Service的返回消息。解析该SoapObject对象，即可获取调用Web Service的返回值
                 SoapObject so = (SoapObject) envelope.bodyIn;
-                result.add(so.getPropertyAsString(0));
+                result.add(so.getProperty(0).toString());
                 return result;
             }
         }
@@ -76,7 +76,7 @@ public class QueryManager extends AsyncTask<String, Integer, ArrayList<String>>
     @Override
     protected void onPostExecute(ArrayList<String> result)
     {
-        myActivity.getResult(result);
+            myActivity.getResult(result);
     }
 
 

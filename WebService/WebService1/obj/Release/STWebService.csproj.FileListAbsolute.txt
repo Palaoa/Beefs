@@ -3,3 +3,9 @@ F:\learn\VSWorkPlace\WebService1\WebService1\bin\WebService1.dll
 F:\learn\VSWorkPlace\WebService1\WebService1\bin\WebService1.pdb
 F:\learn\VSWorkPlace\WebService1\WebService1\obj\Release\WebService1.dll
 F:\learn\VSWorkPlace\WebService1\WebService1\obj\Release\WebService1.pdb
+F:\learn\Project\Beefs\WebService\WebService1\bin\WebService1.dll.config
+F:\learn\Project\Beefs\WebService\WebService1\bin\WebService1.dll
+F:\learn\Project\Beefs\WebService\WebService1\bin\WebService1.pdb
+F:\learn\Project\Beefs\WebService\WebService1\obj\Release\STWebService.csprojResolveAssemblyReference.cache
+F:\learn\Project\Beefs\WebService\WebService1\obj\Release\WebService1.dll
+F:\learn\Project\Beefs\WebService\WebService1\obj\Release\WebService1.pdb

@@ -48,7 +48,8 @@ public class MainActivity extends MyActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         name = "MainActivity";
         ma = this;
@@ -72,9 +73,9 @@ public class MainActivity extends MyActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.Activitys.ActivityLogin");
-                startActivity(intent);
-
+                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys.ActivityLogin");
+                startActivityForResult(intent,101);
+                //.dbtest.Activitys.ActivityLogin
             }
         });
         //myInfoView = getLayoutInflater().inflate(R.layout.myinfo_layout,null);
@@ -87,16 +88,16 @@ public class MainActivity extends MyActivity {
                 if(state)
                 {
                     Intent intent = new Intent();
-                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.Activitys." +
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
                             "ActivityMyInfo");
                     startActivity(intent);
                 }
                 else
                 {
                     Intent intent = new Intent();
-                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.Activitys." +
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
                             "ActivityLogin");
-                    intent.putExtra("ShowToast","Please login first");
+                    //intent.putExtra("ShowToast","Please login first");
                     startActivityForResult(intent,101);
                 }
             }
@@ -123,10 +124,10 @@ public class MainActivity extends MyActivity {
             Boolean result_value = data.getBooleanExtra("ShowToast",false);
             if(result_value)
             {
-                Toast toast = new Toast(getApplicationContext());
-                toast.setText("Login success!");
-                toast.setDuration(Toast.LENGTH_SHORT);
-                toast.show();
+                //Toast toast = new Toast(getApplicationContext());
+                //toast.setText("Login success!");
+                //toast.setDuration(Toast.LENGTH_SHORT);
+                //toast.show();
             }
         }
     }

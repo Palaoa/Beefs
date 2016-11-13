@@ -5,29 +5,36 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="slogan"/>
+        android:text="slogan"
+        android:id="@+id/myinfoe_slogan_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="birthday"/>
+        android:text="birthday"
+        android:id="@+id/myinfoe_birthday_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="occupation"/>
+        android:text="occupation"
+        android:id="@+id/myinfoe_occu_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="gender?"/>
+        android:text="gender?"
+        android:id="@+id/myinfoe_gender_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="address"/>
+        android:text="address"
+        android:id="@+id/myinfoe_address_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="password"/>
+        android:text="password"
+        android:id="@+id/myinfoe_pwd_et"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="confirm password"/>
+        android:text="confirm password"
+        android:id="@+id/myinfoe_pwdconf_et"/>
 </LinearLayout>
