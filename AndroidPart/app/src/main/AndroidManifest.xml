@@ -15,13 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.ActivityLogin">
+        <activity android:name=".activitys.ActivityLogin"/>
 
-        </activity>
+
         <activity android:name=".activitys.ActivityEditInfo"/>
         <activity android:name=".activitys.ActivityMyInfo"/>
-        <activity android:name=".activitys.ActivityWriteStory"/>
-        
+        <activity android:name=".activitys.ActivityStoryWrite"/>
+        <activity android:name=".activitys.ActivityStoryAll"/>
+        <activity android:name=".activitys.ActivityStoryEdit"/>
+        <activity android:name=".activitys.ActivityStoryPublish"/>
     </application>
 
 </manifest>

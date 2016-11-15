@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Created by dell on 2016/11/5.
  */
 
-public class ActivityMyStory extends MyActivity
+public class ActivityStoryAll extends MyActivity
 {
     @Override
     public void getResult(ArrayList<String> result)
@@ -22,7 +22,7 @@ public class ActivityMyStory extends MyActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        name = "ActivityMyStory";
+        name = "ActivityStoryAll";
         setContentView(R.layout.mystory_all_layout);
         ActivityManager.getActivityManager().addActivity(this);
 

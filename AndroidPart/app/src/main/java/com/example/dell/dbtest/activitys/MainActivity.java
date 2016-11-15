@@ -108,7 +108,7 @@ public class MainActivity extends MyActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.Activitys.ActivityWriteStory");
+                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys.ActivityStoryWrite");
                 startActivity(intent);
             }
         });

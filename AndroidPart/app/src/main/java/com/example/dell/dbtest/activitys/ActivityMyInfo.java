@@ -1,5 +1,6 @@
 package com.example.dell.dbtest.activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,14 @@ public class ActivityMyInfo extends MyActivity
         textSlogan = (TextView)findViewById(R.id.myinfo_slogan_text);
         //
         btnEdit = (Button)findViewById(R.id.myinfo_edit_btn);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys.ActivityEditInfo");
+                startActivity(intent);
+            }
+        });
         btnLogout = (Button)findViewById(R.id.myinfo_logout_btn);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
