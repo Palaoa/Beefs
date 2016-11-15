@@ -28,4 +28,21 @@ public class ActivityStoryAll extends MyActivity
 
     }
 
+    /*@Override
+    protected void onResume()
+    {
+        super.onResume();
+    }*/
+
+    private void updateStory()
+    {
+
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        ActivityManager.getActivityManager().popActivity();
+    }
 }

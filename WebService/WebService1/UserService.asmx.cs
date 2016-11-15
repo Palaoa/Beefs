@@ -171,6 +171,21 @@ namespace STWebService
             return false;
         }
 
+        [WebMethod(Description = "update story state")]
+        public bool updateStoryState(String user_id, String password, String story_id, String state, String mshow)
+        {
+            if (dbOperation.queryExistUserStory(user_id, story_id, password))
+            {
+                Model.StoryModel sm = new Model.StoryModel();
+                sm.user_id = user_id;
+                sm.story_id = story_id;
+                sm.state = state.ElementAt(0);
+                sm.mshow = mshow.ElementAt(0);
+                return dbOperation.updateStoryState(sm);
+            }
+            return false;
+        }
+
         [WebMethod(Description = "Update House info")]
         public bool updateHouse(String user_id, String password, String house_id, String city, String address, String limitation,String info)
         {
@@ -205,12 +220,15 @@ namespace STWebService
         public string[] queryUserStory(String user_id)
         {
             List<string> list = new List<string>();
-            foreach (var i in dbOperation.queryStory(user_id).ToArray())
+            Model.StoryModel[] result = dbOperation.queryStory(user_id).ToArray();
+            foreach (var i in result)
             {
                 list.Add(i.story_id);
                 list.Add(user_id);
                 list.Add(i.title);
-                list.Add(i.title);
+                list.Add(i.content);
+                list.Add(i.state.ToString());
+                list.Add(i.mshow.ToString());
             }
             return list.ToArray();
         }

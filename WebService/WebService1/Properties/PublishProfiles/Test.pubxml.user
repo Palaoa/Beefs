@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>10/30/2016 14:04:38</publishTime>
+      <publishTime>11/13/2016 16:02:53</publishTime>
     </File>
     <File Include="bin/WebService1.dll">
-      <publishTime>11/09/2016 18:53:46</publishTime>
+      <publishTime>11/15/2016 20:31:13</publishTime>
     </File>
     <File Include="DBOperation.cs">
       <publishTime>10/29/2016 16:32:53</publishTime>
@@ -22,10 +22,10 @@
       <publishTime>10/17/2016 09:39:30</publishTime>
     </File>
     <File Include="UserService.asmx">
-      <publishTime>10/30/2016 14:04:38</publishTime>
+      <publishTime>11/13/2016 16:02:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/09/2016 18:53:47</publishTime>
+      <publishTime>11/13/2016 16:02:53</publishTime>
     </File>
   </ItemGroup>
 </Project>

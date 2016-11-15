@@ -90,4 +90,10 @@ public class ActivityMyInfo extends MyActivity
             textSlogan.setText("Slogan :"+um.slogan);
         }
     }
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        ActivityManager.getActivityManager().popActivity();
+    }
 }

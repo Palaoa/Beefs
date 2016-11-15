@@ -38,20 +38,22 @@ public class ActivityLogin extends MyActivity
                     String str = result.get(1);
                     //text.setText(str);
                     List<UserModel> list = ResultParser.parseUser(str);
+                    UserModel um = null;
                     if(list.size() != 0)
                     {
+                        um = list.get(0);
                         //UserAccount.getInstance().setUser(list.get(0));
                     }
 
                     //
                     // Yao Gai
-                    UserModel um = new UserModel();
-                    um.user_id = "0001";
+                    //UserModel um = new UserModel();
+                    //um.user_id = "0001";
                     UserAccount.getInstance().setUser(um);
                     //  Fan Hui Main
-                    //intent.putExtra("ShowToast", true);
-                    //setResult(201, intent);
-                    //finish();
+                    intent.putExtra("ShowToast", true);
+                    setResult(201, intent);
+                    finish();
                     //
                     return;
             }
@@ -96,12 +98,6 @@ public class ActivityLogin extends MyActivity
                 ArrayList<String> pair;
                 if(name != ""&&pwd !="")
                 {
-                    pair = new ArrayList<>();
-                    pair.add("loginUser");//method name
-                    pair.add("nickname");
-                    pair.add(name);
-                    pair.add("password");
-                    pair.add(pwd);
                     QueryManager qm = new QueryManager(ma);
                     qm.execute("loginUser","nickname",name,"password",pwd);
                     //result = QueryManager.getQueryManager().query("loginUser",pair);
@@ -112,9 +108,10 @@ public class ActivityLogin extends MyActivity
     }
 
     @Override
-    protected void onDestroy()
+    public void onDestroy()
     {
         super.onDestroy();
-
+        ActivityManager.getActivityManager().popActivity();
     }
+
 }

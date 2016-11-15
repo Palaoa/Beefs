@@ -37,7 +37,7 @@ public class MainActivity extends MyActivity {
         boolean state = UserAccount.getInstance().getState();
         if(state)
         {
-            showInfo.setText("Hello User");
+            showInfo.setText("Hello" + UserAccount.getInstance().getUser().user_id);
 
         }
         else
@@ -61,10 +61,7 @@ public class MainActivity extends MyActivity {
             @Override
             public void onClick(View v)
             {
-                /*ApiTest at = new ApiTest(ma);
-                at.execute("268-1","showapi_appid","26723",
-                        "showapi_sign","508df172c6a14dbbb90358cb9ef6305a","num","189123456789");*/
-
+                //just some tests put here
             }
         });
         //loginView = getLayoutInflater().inflate(R.layout.login_layout,null);
@@ -94,6 +91,7 @@ public class MainActivity extends MyActivity {
                 }
                 else
                 {
+
                     Intent intent = new Intent();
                     intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
                             "ActivityLogin");
@@ -107,9 +105,22 @@ public class MainActivity extends MyActivity {
         btnWriteStory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys.ActivityStoryWrite");
-                startActivity(intent);
+                boolean state = UserAccount.getInstance().getState();
+                if(state)
+                {
+                    Intent intent = new Intent();
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys.ActivityStoryWrite");
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent();
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
+                            "ActivityLogin");
+                    //intent.putExtra("ShowToast","Please login first");
+                    startActivityForResult(intent,102);
+                }
+
             }
         });
         btnMyStory = (Button)findViewById(R.id.main_2mystory_btn);
@@ -118,11 +129,12 @@ public class MainActivity extends MyActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
+        //101 info 102 write story
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 101 && resultCode == 201)  // deng lu
         {
             Boolean result_value = data.getBooleanExtra("ShowToast",false);
-            if(result_value)
+            if(result_value != null && result_value)
             {
                 //Toast toast = new Toast(getApplicationContext());
                 //toast.setText("Login success!");

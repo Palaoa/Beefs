@@ -12,5 +12,8 @@ namespace STWebService.Model
         public string title { get; set; }
         public string content { get; set; }
         public string photo { get; set; }
+        public char state { get; set; }
+        public char mshow { get; set; }
+        public DateTime editTime { get; set; }
     }
 }

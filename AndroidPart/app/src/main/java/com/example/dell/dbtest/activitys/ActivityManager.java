@@ -60,4 +60,11 @@ public class ActivityManager {
         }
         activityStack.clear();
     }
+
+    public void popActivity()
+    {
+        if(activityStack.size() != 0)
+            activityStack.pop();
+        return;
+    }
 }

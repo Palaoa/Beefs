@@ -24,6 +24,9 @@
         <activity android:name=".activitys.ActivityStoryAll"/>
         <activity android:name=".activitys.ActivityStoryEdit"/>
         <activity android:name=".activitys.ActivityStoryPublish"/>
+        <activity android:name=".activitys.ActivityMyHouseAll"/>
+        <activity android:name=".activitys.ActivityMyHouseAdd"/>
+        <activity android:name=".activitys.ActivityMyHouseEdit"/>
     </application>
 
 </manifest>

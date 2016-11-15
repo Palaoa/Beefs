@@ -8,7 +8,8 @@ import java.util.Date;
 
 public class StoryShowModel
 {
+	public String story_id;
     public Date stime;
     public Date eTime;
-    public String city;
+    public String city_id;
 }

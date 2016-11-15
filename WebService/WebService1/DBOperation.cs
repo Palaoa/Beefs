@@ -233,17 +233,23 @@ namespace STWebService
             List<Model.StoryModel> list = new List<Model.StoryModel>();
             try
             {
-                string sql = "select story_id,title,content from story where user_id = '" + user_id + "'";
+                string sql = "select story_id,title,content,state,mshow,edittime from story where user_id = '" 
+                    + user_id + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                Model.StoryModel sm = new StoryModel();
+                Model.StoryModel sm = null;
                 if(reader.HasRows)
                 {
                     while (reader.Read())
                     {
+                        sm = new StoryModel();
                         sm.story_id = reader[0].ToString();
                         sm.title = reader[1].ToString();
                         sm.content = reader[2].ToString();
+                        sm.state = reader[3].ToString().ElementAt(0);
+                        sm.mshow = reader[4].ToString().ElementAt(0);
+                        string date = reader[5].ToString();
+                        sm.editTime = DateTime.Parse(date);
                         list.Add(sm);
                     }
                 }
@@ -266,11 +272,12 @@ namespace STWebService
                 string sql = "select house_id,city_id,address,limitation,info,state from house where user_id = '" + user_id + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                Model.HouseModel hm = new HouseModel();
+                Model.HouseModel hm = null;
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
+                        hm = new HouseModel();
                         hm.house_id = reader[0].ToString();
                         hm.city_id = reader[1].ToString();
                         hm.address = reader[2].ToString();
@@ -378,8 +385,8 @@ namespace STWebService
         {
             try
             {
-                string sql = "insert into story (story_id,user_id,title,content) values('" + sm.story_id + "','" + sm.user_id + "','" 
-                    + sm.title + "','" + sm.content + "')";
+                string sql = "insert into story (story_id,user_id,title,content,edittime) values('" + sm.story_id + "','" + sm.user_id + "','" 
+                    + sm.title + "','" + sm.content + "','" + DateTime.Now.ToString() +"')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -466,6 +473,7 @@ namespace STWebService
             }
             return result;
         }
+
         // meixie
         public bool updateUserSecurity(UserSecurityModel model)
         {
@@ -503,8 +511,25 @@ namespace STWebService
         {
             try
             {
-                string sql = "update story set title = '" + sm.title + "',content = '" + sm.content + 
-                    "' where story_id = '" + sm.story_id + "'";
+                string sql = "update story set title = '" + sm.title + "',content = '" + sm.content + "',edittime = '" 
+                    + DateTime.Now.ToString() + "' where story_id = '" + sm.story_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return false;
+        }
+
+        public bool updateStoryState(StoryModel sm)
+        {
+            try
+            {
+                string sql = "update story set state = '" + sm.state + "',mshow = '" + sm.mshow + "' where story_id = '" + sm.story_id + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();

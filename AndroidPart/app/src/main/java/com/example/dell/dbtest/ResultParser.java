@@ -13,7 +13,7 @@ import com.example.dell.dbtest.Models.UserModel;
 
 public class ResultParser
 {
-    // Bu Hao De Fang Fa!!!
+    // Hao Xiang Neng Yong
     public static ArrayList<UserModel> parseUser(String response)throws Exception
     {
         ArrayList<UserModel> result = new ArrayList<>();
@@ -24,7 +24,7 @@ public class ResultParser
             {
                 int i = 0;
                 int count = 0;
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+                SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
                 UserModel model = new UserModel();
                 int length = array.length;
                 //12
@@ -103,7 +103,26 @@ public class ResultParser
         return result;
     }
 
+    public static Boolean parseBool(String response)throws Exception
+    {
+        ArrayList<UserModel> result = new ArrayList<>();
+        if(!response.isEmpty()) {
+            String[] array = response.split(";");
+            String str = null;
+            if (array.length < 1) {
+                str = array[1];
+                String[] strs = str.split("=");
+                if (strs.length == 2 && strs[1] == "true")
+                {
+                    return true;
+                }
+            }
 
+        }
+        return false;
+    }
+
+    // Hai Mei Shi, Ying Gai Ke Yi
     public static ArrayList<StoryModel> parseStory(String response)throws Exception
     {
         ArrayList<StoryModel> result = new ArrayList<>();
