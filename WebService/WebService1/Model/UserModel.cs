@@ -19,6 +19,7 @@ namespace STWebService.Model
         public int coin { get; set; }
         public int contribution { get; set; }
         public string password { get; set; }
+        public string phone { get; set; }
         internal void setDate(string str)
         {
             if (str == "")
