@@ -17,7 +17,7 @@ public class MainActivity extends MyActivity {
 
     private Button btnTest;
     private Button btnLogin;
-    private Button btnMyInfo,btnWriteStory,btnMyStory;
+    private Button btnMyInfo,btnWriteStory,btnMyStory,btnRegister;
     private MyActivity ma;
     //private View loginView;
     //private View myInfoView;
@@ -124,12 +124,29 @@ public class MainActivity extends MyActivity {
             }
         });
         btnMyStory = (Button)findViewById(R.id.main_2mystory_btn);
+
+        btnRegister = (Button)findViewById(R.id.main_register_btn);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
+                        "ActivityRegister");
+                //intent.putExtra("ShowToast","Please login first");
+                startActivityForResult(intent,103);
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        //101 info 102 write story
+        /*
+        !!!!!!!!!!!!!!!!!!!!!!!!
+        !!!!!!!!!!!!!!!!!!!!!!!!
+        */
+        //101 info 102 write story 103 register
+
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 101 && resultCode == 201)  // deng lu
         {

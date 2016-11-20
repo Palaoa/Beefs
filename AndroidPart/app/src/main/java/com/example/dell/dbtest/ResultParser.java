@@ -11,31 +11,24 @@ import com.example.dell.dbtest.Models.StoryModel;
 import com.example.dell.dbtest.Models.UserModel;
 
 
-public class ResultParser
-{
+public class ResultParser {
     // Hao Xiang Neng Yong
-    public static ArrayList<UserModel> parseUser(String response)throws Exception
-    {
+    public static ArrayList<UserModel> parseUser(String response) throws Exception {
         ArrayList<UserModel> result = new ArrayList<>();
-        if(!response.isEmpty())
-        {
+        if (!response.isEmpty()) {
             String[] array = response.split(";");
-            if(array.length>11)
-            {
+            if (array.length > 11) {
                 int i = 0;
                 int count = 0;
                 SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
                 UserModel model = new UserModel();
                 int length = array.length;
                 //12
-                while(i<length)
-                {
+                while (i < length) {
                     String str = array[i++];
                     String[] strs = str.split("=");
-                    if(strs.length == 2)
-                    {
-                        switch (count)
-                        {
+                    if (strs.length == 2) {
+                        switch (count) {
                             case 0:
                                 count++;
                                 model.user_id = strs[1];
@@ -94,56 +87,38 @@ public class ResultParser
                 }
 
 
-            }
-            else
-            {
+            } else {
 
             }
         }
         return result;
     }
 
-    public static Boolean parseBool(String response)throws Exception
-    {
-        ArrayList<UserModel> result = new ArrayList<>();
-        if(!response.isEmpty()) {
-            String[] array = response.split(";");
-            String str = null;
-            if (array.length < 1) {
-                str = array[1];
-                String[] strs = str.split("=");
-                if (strs.length == 2 && strs[1] == "true")
-                {
-                    return true;
-                }
-            }
-
+    public static Boolean parseBool(String response) throws Exception {
+        //ArrayList<UserModel> result = new ArrayList<>();
+        if (!response.isEmpty()) {
+            if(response.contains("true"))
+                return true;
         }
         return false;
     }
 
     // Hai Mei Shi, Ying Gai Ke Yi
-    public static ArrayList<StoryModel> parseStory(String response)throws Exception
-    {
+    public static ArrayList<StoryModel> parseStory(String response) throws Exception {
         ArrayList<StoryModel> result = new ArrayList<>();
-        if(!response.isEmpty())
-        {
+        if (!response.isEmpty()) {
             String[] array = response.split(";");
-            if(array.length>3)
-            {
+            if (array.length > 3) {
                 int i = 0;
                 int count = 0;
                 StoryModel model = new StoryModel();
                 int length = array.length;
                 //12
-                while(i<length)
-                {
+                while (i < length) {
                     String str = array[i++];
                     String[] strs = str.split("=");
-                    if(strs.length == 2)
-                    {
-                        switch (count)
-                        {
+                    if (strs.length == 2) {
+                        switch (count) {
                             case 0:
                                 count++;
                                 model.story_id = strs[1];
@@ -169,9 +144,7 @@ public class ResultParser
                 }
 
 
-            }
-            else
-            {
+            } else {
 
             }
         }
@@ -179,11 +152,27 @@ public class ResultParser
 
         return result;
     }
+
+
+    public static String parseID(String response) throws Exception {
+        String result = new String();
+        if (!response.isEmpty()) {
+            String[] array = response.split(";");
+            String str = null;
+            if (array.length < 1) {
+                str = array[1];
+                String[] strs = str.split("=");
+                if (strs.length == 2) {
+                    result = strs[1];
+                    return result;
+                }
+            }
+
+        }
+        return result;
+    }
+
 }
-
-
-
-
 
 
 /*public static ArrayList<UserModel> parseUser(String string)throws Exception

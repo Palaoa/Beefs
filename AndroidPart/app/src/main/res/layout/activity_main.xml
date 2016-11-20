@@ -30,6 +30,11 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/main_register_btn"
+        android:text="register"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/main_2myinfo_btn"
         android:text="My Info"
         />

@@ -17,6 +17,6 @@ public class StoryModel
     // No OnShow End (N O E)
     public char mshow;
     // No Yes (N Y)
-    public Date publishTime;
+    public Date editTime;
 
 }

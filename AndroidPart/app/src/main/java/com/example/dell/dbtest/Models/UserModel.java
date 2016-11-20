@@ -19,6 +19,7 @@ public class UserModel {
     public int coin;
     public int contribution;
     public String password;
+    //public String phone;
     //private String
 
 }
