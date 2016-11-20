@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
@@ -62,6 +62,22 @@ public class MainActivity extends MyActivity {
             public void onClick(View v)
             {
                 //just some tests put here
+                boolean state = UserAccount.getInstance().getState();
+                if(state)
+                {
+                    Intent intent = new Intent();
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
+                            "ActivityStoryAll");
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent();
+                    intent.setClassName(getApplicationContext(),"com.example.dell.dbtest.activitys." +
+                            "ActivityLogin");
+                    //intent.putExtra("ShowToast","Please login first");
+                    startActivityForResult(intent,101);
+                }
             }
         });
         //loginView = getLayoutInflater().inflate(R.layout.login_layout,null);
@@ -150,14 +166,7 @@ public class MainActivity extends MyActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 101 && resultCode == 201)  // deng lu
         {
-            Boolean result_value = data.getBooleanExtra("ShowToast",false);
-            if(result_value != null && result_value)
-            {
-                //Toast toast = new Toast(getApplicationContext());
-                //toast.setText("Login success!");
-                //toast.setDuration(Toast.LENGTH_SHORT);
-                //toast.show();
-            }
+
         }
     }
 

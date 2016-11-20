@@ -42,19 +42,14 @@ public class ActivityLogin extends MyActivity
                     if(list.size() != 0)
                     {
                         um = list.get(0);
-                        //UserAccount.getInstance().setUser(list.get(0));
+                        UserAccount.getInstance().setUser(um);
+                        //  Fan Hui Main
+                        intent.putExtra("ShowToast", true);
+                        setResult(201, intent);
+                        finish();
+                        //
+                        return;
                     }
-
-                    //
-                    // Yao Gai
-                    //UserModel um = new UserModel();
-                    //um.user_id = "0001";
-                    UserAccount.getInstance().setUser(um);
-                    //  Fan Hui Main
-                    intent.putExtra("ShowToast", true);
-                    setResult(201, intent);
-                    finish();
-                    //
                     return;
             }
         }

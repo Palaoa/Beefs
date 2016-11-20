@@ -8,6 +8,10 @@ import java.util.Date;
  * Created by dell on 2016/10/31.
  */
 
+
+/*
+* 用来处理用户的登陆信息处理判断 暂时存储
+* */
 public class UserAccount {
     private static UserAccount instance;
     private static UserModel currentUser;

@@ -83,19 +83,13 @@ public class ActivityStoryWrite extends MyActivity
         title = titleEdt.getText().toString();
         if(title == null || title == "")
         {
-            Toast toast = new Toast(getApplicationContext());
-            toast.setText("Please write a title!");
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
+
             return;
         }
         content = contentEdt.getText().toString();
         if(content == null || content.length() < 8)
         {
-            Toast toast = new Toast(getApplicationContext());
-            toast.setText("Please write over 8 character");
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
+
             return;
         }
         QueryManager qm = new QueryManager(ma);

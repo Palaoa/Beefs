@@ -249,7 +249,11 @@ namespace STWebService
                         sm.state = reader[3].ToString().ElementAt(0);
                         sm.mshow = reader[4].ToString().ElementAt(0);
                         string date = reader[5].ToString();
-                        sm.editTime = DateTime.Parse(date);
+                        if(date != "")
+                        {
+                            sm.editTime = DateTime.Parse(date);
+                        }
+                        
                         list.Add(sm);
                     }
                 }
@@ -364,11 +368,46 @@ namespace STWebService
             }
         }
 
+        public bool insertUser(String user_id, String password, String nickname,String gender,DateTime birtbady)
+        {
+            try
+            {
+                string sql = "insert into user(user_id,password,nickname,birthday,gender) values(" + "'" + user_id + "','" + password + "','" 
+                    + nickname + "','" + birtbady + "','" + gender + "')";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool insertUserSecurity(String user_id)
         {
             try
             {
                 string sql = "insert into user_security(user_id) values('" + user_id + "')";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool insertUserSecurity(String user_id,String phone_num)
+        {
+            try
+            {
+                string sql = "insert into user_security(user_id,phone) values('" + user_id + "','" + phone_num + "')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();

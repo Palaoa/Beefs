@@ -38,34 +38,47 @@ namespace STWebService
 
         //bing wei user_security + 1
         [WebMethod(Description = "增加一条User信息")]
-        public bool insertUser(String password,String nickname)
+        public string[] insertUser(String password,String nickname,String gender,DateTime birthday,String phone)
         {
             int count;
+            List<string> result = new List<string>();
             if( !dbOperation.queryExistUser(nickname) )
             {
                 count = dbOperation.countUser();
                 if (count == -1)
-                    return false;
+                {
+                    result.Add("false");
+                    return result.ToArray();
+                }
+                   
                 string id = count.ToString();
                 while(id.Length < 5)
                 {
                     id = "0" + id;
                 }
                 id = "U" + id;
-                if( dbOperation.insertUser(id, password, nickname) )
+                if( dbOperation.insertUser(id, password, nickname,gender,birthday) )
                 {
 
-                    if (dbOperation.insertUserSecurity(id))
-                        return true;
+                    if (dbOperation.insertUserSecurity(id,phone))
+                    {
+                        result.Add(id);
+                        return result.ToArray();
+                    }
                     else
                     {
                         dbOperation.deleteUser(id);
-                        return false;
+                        if (count == -1)
+                        {
+                            result.Add("false");
+                            return result.ToArray();
+                        }
                     }
                 }
                 
             }
-            return false;    
+            result.Add("false");
+            return result.ToArray();   
         }
 
         [WebMethod(Description = "Add a story")]

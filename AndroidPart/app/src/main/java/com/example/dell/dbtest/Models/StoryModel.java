@@ -1,12 +1,13 @@
 package com.example.dell.dbtest.Models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by dell on 2016/11/5.
  */
 
-public class StoryModel
+public class StoryModel implements Serializable
 {
     public String story_id;
     public String user_id;

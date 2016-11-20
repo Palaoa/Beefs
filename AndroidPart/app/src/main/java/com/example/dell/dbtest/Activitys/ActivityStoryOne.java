@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.dell.dbtest.Models.StoryModel;
 import com.example.dell.dbtest.R;
 
 import org.w3c.dom.Text;
@@ -20,6 +21,7 @@ public class ActivityStoryOne extends MyActivity
 {
     private Button btn_edit,btn_publish;
     private TextView txt_title,txt_content;
+    private StoryModel sm;
     @Override
     public void getResult(ArrayList<String> result)
     {
@@ -33,11 +35,14 @@ public class ActivityStoryOne extends MyActivity
         setContentView(R.layout.mystory_one_layout);
         name = "ActivityStoryOne";
         ActivityManager.getActivityManager().addActivity(this);
+        sm = (StoryModel)savedInstanceState.getSerializable("StoryModel");
+
         btn_edit = (Button)findViewById(R.id.mystoryo_edit_btn);
         btn_publish = (Button)findViewById(R.id.mystoryo_publish_btn);
         txt_title = (TextView)findViewById(R.id.mystoryo_title_text);
+        txt_title.setText(sm.title);
         txt_content = (TextView)findViewById(R.id.mystoryo_content_text);
-
+        txt_content.setText(sm.content);
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,5 +51,12 @@ public class ActivityStoryOne extends MyActivity
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        ActivityManager.getActivityManager().popActivity();
     }
 }

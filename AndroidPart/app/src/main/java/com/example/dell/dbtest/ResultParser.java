@@ -15,6 +15,10 @@ public class ResultParser {
     // Hao Xiang Neng Yong
     public static ArrayList<UserModel> parseUser(String response) throws Exception {
         ArrayList<UserModel> result = new ArrayList<>();
+        if(response.contains("false"))
+        {
+            return result;
+        }
         if (!response.isEmpty()) {
             String[] array = response.split(";");
             if (array.length > 11) {
@@ -77,13 +81,15 @@ public class ResultParser {
                             case 11:
                                 count = 0;
                                 model.password = strs[1];
+                                result.add(model);
+                                model = new UserModel();
                                 break;
                             default:
                                 break;
 
                         }
                     }
-                    result.add(model);
+
                 }
 
 
@@ -106,9 +112,13 @@ public class ResultParser {
     // Hai Mei Shi, Ying Gai Ke Yi
     public static ArrayList<StoryModel> parseStory(String response) throws Exception {
         ArrayList<StoryModel> result = new ArrayList<>();
+        if(response.contains("false"))
+        {
+            return result;
+        }
         if (!response.isEmpty()) {
             String[] array = response.split(";");
-            if (array.length > 3) {
+            if (array.length > 6) {
                 int i = 0;
                 int count = 0;
                 StoryModel model = new StoryModel();
@@ -132,19 +142,27 @@ public class ResultParser {
                                 model.title = strs[1];
                                 break;
                             case 3:
-                                count = 0;
+                                count++;
                                 model.content = strs[1];
+                                break;
+                            case 4:
+                                count++;
+                                model.state = strs[1].charAt(0);
+                                break;
+                            case 5:
+                                count = 0;
+                                model.mshow = strs[1].charAt(0);
+                                result.add(model);
+                                model = new StoryModel();
                                 break;
                             default:
                                 break;
 
                         }
                     }
-                    result.add(model);
+
                 }
 
-
-            } else {
 
             }
         }
