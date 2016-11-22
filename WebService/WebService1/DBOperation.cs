@@ -268,6 +268,46 @@ namespace STWebService
             return list;
         }
 
+        public List<Model.StoryModel> queryOneStory(String story_id)
+        {
+            List<Model.StoryModel> list = new List<Model.StoryModel>();
+            try
+            {
+                string sql = "select story_id,user_id,title,content,state,mshow,edittime from story where story_id = '"
+                    + story_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Model.StoryModel sm = null;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        sm = new StoryModel();
+                        sm.story_id = reader[0].ToString();
+                        sm.user_id = reader[1].ToString();
+                        sm.title = reader[2].ToString();
+                        sm.content = reader[3].ToString();
+                        sm.state = reader[4].ToString().ElementAt(0);
+                        sm.mshow = reader[5].ToString().ElementAt(0);
+                        string date = reader[6].ToString();
+                        if (date != "")
+                        {
+                            sm.editTime = DateTime.Parse(date);
+                        }
+
+                        list.Add(sm);
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return list;
+        }
+
         public List<Model.HouseModel> queryHouse(String user_id)
         {
             List<Model.HouseModel> list = new List<Model.HouseModel>();

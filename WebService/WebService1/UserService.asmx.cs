@@ -246,6 +246,23 @@ namespace STWebService
             return list.ToArray();
         }
 
+        [WebMethod(Description = "query one story")]
+        public string[] queryOneStory(String story_id)
+        {
+            List<string> list = new List<string>();
+            Model.StoryModel[] result = dbOperation.queryOneStory(story_id).ToArray();
+            foreach (var i in result)
+            {
+                list.Add(story_id);
+                list.Add(i.user_id);
+                list.Add(i.title);
+                list.Add(i.content);
+                list.Add(i.state.ToString());
+                list.Add(i.mshow.ToString());
+            }
+            return list.ToArray();
+        }
+
         [WebMethod(Description = "Query House")]
         public string[] queryUserHouse(String user_id)
         {
