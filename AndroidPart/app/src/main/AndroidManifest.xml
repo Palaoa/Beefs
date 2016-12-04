@@ -27,6 +27,7 @@
         <activity android:name=".activitys.ActivityMyHouseAll"/>
         <activity android:name=".activitys.ActivityMyHouseAdd"/>
         <activity android:name=".activitys.ActivityMyHouseEdit"/>
+        <activity android:name=".activitys.ActivityHouseOne"/>
         <activity android:name=".activitys.ActivityRegister"/>
     </application>
 

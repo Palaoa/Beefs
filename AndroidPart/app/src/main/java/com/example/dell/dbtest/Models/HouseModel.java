@@ -5,6 +5,8 @@ import java.io.Serializable;
 /**
  * Created by dell on 2016/11/14.
  */
+// adapter Zhi Zi Ji Xie De Di Zhi
+
 
 public class HouseModel implements Serializable
 {
