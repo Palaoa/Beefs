@@ -88,4 +88,9 @@ public class BaseDrawerActivity extends BaseActivity {
         }, 200);
     }
 
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }

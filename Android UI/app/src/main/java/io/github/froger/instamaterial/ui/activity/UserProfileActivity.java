@@ -147,4 +147,10 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
            vUserDetails.animate().translationY(0).setDuration(300).setStartDelay(200).setInterpolator(INTERPOLATOR);
            vUserStats.animate().alpha(1).setDuration(200).setStartDelay(400).setInterpolator(INTERPOLATOR).start();
     }
+
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }

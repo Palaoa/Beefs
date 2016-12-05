@@ -285,4 +285,10 @@ public class TakePhotoActivity extends BaseActivity implements RevealBackgroundV
             ivTakenPhoto.setVisibility(View.VISIBLE);
         }
     }
+
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }

@@ -199,4 +199,10 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
     public void showLikedSnackbar() {
         Snackbar.make(clContent, "Liked!", Snackbar.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }

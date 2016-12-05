@@ -25,7 +25,8 @@ import io.github.froger.instamaterial.Utils;
 /**
  * Created by Miroslaw Stanek on 20.01.15.
  */
-public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+{
 
     private static final int PHOTO_ANIMATION_DELAY = 600;
     private static final Interpolator INTERPOLATOR = new DecelerateInterpolator();

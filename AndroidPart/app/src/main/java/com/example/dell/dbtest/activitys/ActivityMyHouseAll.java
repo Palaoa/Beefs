@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.dell.dbtest.HouseAdapter;
+import com.example.dell.dbtest.adapter.HouseAdapter;
 import com.example.dell.dbtest.Models.HouseModel;
-import com.example.dell.dbtest.Models.StoryModel;
 import com.example.dell.dbtest.QueryManager;
 import com.example.dell.dbtest.R;
 import com.example.dell.dbtest.ResultParser;
-import com.example.dell.dbtest.StoryAdapter;
 import com.example.dell.dbtest.UserAccount;
 
 import java.util.ArrayList;

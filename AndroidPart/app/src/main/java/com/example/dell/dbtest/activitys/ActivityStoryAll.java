@@ -5,17 +5,14 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.dell.dbtest.Models.StoryModel;
-import com.example.dell.dbtest.Models.UserModel;
 import com.example.dell.dbtest.QueryManager;
 import com.example.dell.dbtest.R;
 import com.example.dell.dbtest.ResultParser;
-import com.example.dell.dbtest.StoryAdapter;
+import com.example.dell.dbtest.adapter.StoryAdapter;
 import com.example.dell.dbtest.UserAccount;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by dell on 2016/11/5.

@@ -146,4 +146,10 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
 
         return true;
     }
+
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }

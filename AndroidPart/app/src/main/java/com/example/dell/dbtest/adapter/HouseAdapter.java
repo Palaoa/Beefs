@@ -1,4 +1,4 @@
-package com.example.dell.dbtest;
+package com.example.dell.dbtest.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dell.dbtest.Models.HouseModel;
+import com.example.dell.dbtest.R;
 
 import java.util.List;
 

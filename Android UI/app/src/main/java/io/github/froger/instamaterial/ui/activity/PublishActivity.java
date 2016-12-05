@@ -143,4 +143,10 @@ public class PublishActivity extends BaseActivity {
             propagatingToggleState = false;
         }
     }
+
+    @Override
+    public void getResult(ArrayList<String> result)
+    {
+
+    }
 }
