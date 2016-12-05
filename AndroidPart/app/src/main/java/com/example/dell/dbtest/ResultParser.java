@@ -7,6 +7,7 @@ package com.example.dell.dbtest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import com.example.dell.dbtest.Models.HouseModel;
 import com.example.dell.dbtest.Models.StoryModel;
 import com.example.dell.dbtest.Models.UserModel;
 
@@ -190,6 +191,72 @@ public class ResultParser {
         return result;
     }
 
+    public static ArrayList<HouseModel> parseHouse(String response) throws  Exception
+    {
+        ArrayList<HouseModel> result = new ArrayList<>();
+        if(response.contains("false"))
+        {
+            return result;
+        }
+        if (!response.isEmpty()) {
+            String[] array = response.split(";");
+            if (array.length > 7) {
+                int i = 0;
+                int count = 0;
+                //SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+                HouseModel model = new HouseModel();
+                int length = array.length;
+                //12
+                while (i < length) {
+                    String str = array[i++];
+                    String[] strs = str.split("=");
+                    if (strs.length == 2) {
+                        switch (count) {
+                            case 0:
+                                count++;
+                                model.house_id = strs[1];
+                                break;
+                            case 1:
+                                count++;
+                                model.user_id = strs[1];
+                                break;
+                            case 2:
+                                count++;
+                                model.city_id = strs[1];
+                                break;
+                            case 3:
+                                count++;
+                                model.address = strs[1];
+                                break;
+                            case 4:
+                                count++;
+                                model.info = strs[1];
+                                break;
+                            case 5:
+                                count++;
+                                model.limitation = strs[1];
+                                break;
+                            case 6:
+                                count++;
+                                model.state = strs[1].charAt(0);
+                                result.add(model);
+                                model = new HouseModel();
+                                break;
+                            default:
+                                break;
+
+                        }
+                    }
+
+                }
+
+
+            } else {
+
+            }
+        }
+        return result;
+    }
 }
 
 

@@ -6,12 +6,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal" android:background="#f1e4f1">
         <TextView
-            android:id="@+id/storylist_title_txt"
+            android:id="@+id/houselist_title_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#666872"/>
         <Button
-            android:id="@+id/storylist_view_btn"
+            android:id="@+id/houselist_view_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View"/>
