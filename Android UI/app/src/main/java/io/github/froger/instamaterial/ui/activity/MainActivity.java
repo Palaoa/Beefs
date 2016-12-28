@@ -14,10 +14,16 @@ import android.view.Menu;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.github.froger.instamaterial.QueryManager;
 import io.github.froger.instamaterial.R;
+import io.github.froger.instamaterial.ResultParce;
+import io.github.froger.instamaterial.UserAccount;
 import io.github.froger.instamaterial.Utils;
+import io.github.froger.instamaterial.models.UserModel;
 import io.github.froger.instamaterial.ui.adapter.FeedAdapter;
 import io.github.froger.instamaterial.ui.adapter.FeedItemAnimator;
 import io.github.froger.instamaterial.ui.view.FeedContextMenu;
@@ -30,7 +36,7 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
 
     private static final int ANIM_DURATION_TOOLBAR = 300;
     private static final int ANIM_DURATION_FAB = 400;
-
+    BaseActivity ba;
     @BindView(R.id.rvFeed)
     RecyclerView rvFeed;
     @BindView(R.id.btnCreate)
@@ -41,20 +47,26 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
     private FeedAdapter feedAdapter;
 
     private boolean pendingIntroAnimation;
-
+    private boolean isAnimated = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupFeed();
 
+        ba = this;
+
         if (savedInstanceState == null) {
             pendingIntroAnimation = true;
         } else {
-            feedAdapter.updateItems(false);
+            isAnimated = false;
+            startQuery();
         }
     }
-
+    /*------------------------------------------------------------------------
+                                11              11
+                                11              11
+    -------------------------------------------------------------------------*/
     private void setupFeed() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this) {
             @Override
@@ -140,7 +152,8 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
                 .setStartDelay(300)
                 .setDuration(ANIM_DURATION_FAB)
                 .start();
-        feedAdapter.updateItems(true);
+        isAnimated = true;
+        startQuery();
     }
 
     @Override
@@ -163,7 +176,9 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
         int[] startingLocation = new int[2];
         v.getLocationOnScreen(startingLocation);
         startingLocation[0] += v.getWidth() / 2;
-        UserProfileActivity.startUserProfileFromLocation(startingLocation, this);
+        String user_id;
+        //FeedAdapter.FeedItem fi = feedAdapter.getItemId();
+        UserProfileActivity.startUserProfileFromLocation(startingLocation, this, "0001");
         overridePendingTransition(0, 0);
     }
 
@@ -203,6 +218,57 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
     @Override
     public void getResult(ArrayList<String> result)
     {
+        if(result.get(0) == "queryStoryByTime")
+        {
+            try
+            {
+                //ArrayList<FeedAdapter.FeedItem> feedList = new ArrayList<>();
+                ArrayList<FeedAdapter.FeedItem> feedList = ResultParce.parseFeed(result.get(1));
+                feedAdapter.updateItems(isAnimated,feedList);
+            }
+            catch (Exception exception)
+            {
+                exception.printStackTrace();
+            }
+        }
+    }
 
+    private void startQuery()
+    {
+        UserModel um = UserAccount.getInstance().getUser();
+        //Yao Gai!!!
+        if(um == null)
+        {
+            um = new UserModel();
+            um.nickname = "Test1";
+            um.user_id = "0001";
+            UserAccount.getInstance().setUser(um);
+        }
+        if(um == null)
+        {
+            Intent intent = new Intent();
+            intent.setClassName(getApplicationContext(),"io.github.froger.instamaterial.ui.activity.LoginnActivity");
+            startActivityForResult(intent, 101);
+            // Xian Deng Lu
+        }
+        QueryManager qm = new QueryManager(ba);
+        qm.execute("queryStoryByTime","user_id",um.user_id);
+        return;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        /*
+        !!!!!!!!!!!!!!!!!!!!!!!!
+        !!!!!!!!!!!!!!!!!!!!!!!!
+        */
+        //101 info 102 write story 103 register
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 101 && resultCode == 201)  // deng lu
+        {
+            startQuery();
+        }
     }
 }

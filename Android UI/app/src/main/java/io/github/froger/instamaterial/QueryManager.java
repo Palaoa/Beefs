@@ -17,9 +17,9 @@ public class QueryManager extends AsyncTask<String, Integer, ArrayList<String>> 
     private String SERVICE_URL = "http://121.42.12.186:803/UserService.asmx";
     private HttpTransportSE ht;
     private SoapSerializationEnvelope envelope;
-    private MyActivity myActivity;
+    private BaseActivity myActivity;
 
-    public QueryManager(MyActivity activity) {
+    public QueryManager(BaseActivity activity) {
         super();
         ht = new HttpTransportSE(SERVICE_URL);
         ht.debug = true;
@@ -54,9 +54,8 @@ public class QueryManager extends AsyncTask<String, Integer, ArrayList<String>> 
                 result.add(so.getProperty(0).toString());
                 return result;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (XmlPullParserException e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return result;

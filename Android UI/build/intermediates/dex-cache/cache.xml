@@ -3,291 +3,300 @@
 
     <item
         is-multidex="true"
-        jar="/Users/xlx/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.4.0/ea392375cf9ff59234a82e7928a204215ccc98cd/butterknife-annotations-8.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.4.0_2d3dd98bf1be2496a1310b7c5e0311af001d1cd1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_044246e7d798a8264b3a678f9423f3dab4602b46/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_5a2f03e42429d4695d82d9587aab7b40d4f0d49e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_6afed1e909af6b9b122ea250ba1732651b550e19/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_c0ca507ca6d1e26db3fd7ca0acc37d5adb2851c6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b5d7ba9e868a9251dca3277fcbf494dc59632eff">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.timber-timber-4.3.1_b89c02e5d4dbe0dcf6324d04c3fe69084e1a0636/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_0c3138f06fe26c165c22aadaceef37aa9d39af05/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_e16be64ec006717a6f5697188a8908f7d28dc8db/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_4780a052ccb1df7d718c1e441330510195055e1d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.jakewharton.hugo/hugo-runtime/1.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="2bac9385ea008561a30419c09e9230a8681b3e09">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.hugo-hugo-runtime-1.2.1_749bcacc98e8716e6434b7c99e77dd0a30e3f42f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_2cf9cb00ee85ca8a51322a469d5a3f2d3fec7e25/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_f367e853a9555896e3ccca61119e87179aeeedd2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_9f3b22a8c4233537a376ac4ef4ad2ad44b8191e2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b7cf6cabd4a9a874c646ede00ef50724300db252">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_51f82f71fa20d7690b5dd14cb24ccf8ba78deaed/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-v13/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6ac094121e75b4b87432beb9305d70c68ec6dcab">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v13-25.0.0_7b726ec7da1411cfffdc7e9bafa4328c2dd70b65/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjrt/1.8.5/39a8ff2d1f79267907f5573c090b342b040b9682/aspectjrt-1.8.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="39a8ff2d1f79267907f5573c090b342b040b9682">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/aspectjrt-1.8.5_dfc955b59587e9912cdb190d6b2ec0cf124ec07c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_0221fb162b3e0d84008fc9d7b7d0898a1f988550/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/.gradle/caches/modules-2/files-2.1/com.jakewharton.hugo/hugo-annotations/1.2.1/b01150795c5cdca1eb7e501bf00f105ff0e31501/hugo-annotations-1.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b01150795c5cdca1eb7e501bf00f105ff0e31501">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/hugo-annotations-1.2.1_e97db52d2bc9c8fe8bc1a9864952ce9d37149c61/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_2165a5d988c7f785a580083f09370b4fb69b7554/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-v13/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="67355078cd30daae43f62ba47a4663ee6edb976e">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_365e696071b6133ae0ab843ab9d15bc4a0540292/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.0.0_035c2369a6c320be267a938f04aa712594c94bee/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.commonsware.cwac/camera/0.7.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3c52496d5177b4f45994244bc954babd31d7d24c">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.commonsware.cwac-camera-0.7.0_6e8732cefab7cb8f14645e72a4781f005e25b487/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_9e597d08a09d33221c8a6efb5ab4d9fa91723fed/classes.dex" />
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.0_b2b4780e7e5ba24e84413fb5d7c977d56a7ff466\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_b8736d2d83ebcf7a01fcdb1c68d1cae44339a9fc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_4bba012a338b92f5fec68e4a0d732385a2744f0c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_33f8a06ea8d688a2528227fe78e0a8668c1af5f0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_e29301db10e7a3f9d43eec86069f94a02154a9b8/classes.dex" />
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_e018844298757aed7d85f43d6a12946d39ab8a1b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="5d968d6caa499621992bc1530064884d248421a5">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_479211666bc5e261f9d2f2f5bfe13ab8b7b39795/classes.dex" />
+        sha1="fea7efdaa7ff0ef7c991b642329ae9a92211bfb7">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ed0c48502801f74cc2102d0fd062927b314417e5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars/classes.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton.hugo\hugo-runtime\1.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.4.0_804a229c34dab0588f2ea001f55cab4d0555f71a/classes.dex" />
+        sha1="2bac9385ea008561a30419c09e9230a8681b3e09">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton.hugo-hugo-runtime-1.2.1_72ccc93b7824e555d546412a250d01300bb7a806\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/palette-v7/25.0.0/jars/classes.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.0_10067b41d6f86aad6aefd5c99d32b8b24b48eee6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton.timber\timber\4.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b5d7ba9e868a9251dca3277fcbf494dc59632eff">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton.timber-timber-4.3.1_76184b666cd5d4a690d9a868c087450a5fdd8645\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\palette-v7\25.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="672cceae26e9a8fcbd8e0eefe5fc351c50d2488a">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-25.0.0_9e23e25c216e6c35a7e968f00df766120856fab0/classes.dex" />
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-25.0.0_342a4e04afc23e25adc35aef4e765927a615f1e7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_61bbd9135b2572c9f44225bdffb6a8ca3d7e81dc/classes.dex" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.0_f734c74fcd5c82407e8efd3ed28d7e7912b5685b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ac094121e75b4b87432beb9305d70c68ec6dcab">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-25.0.0_12df31cb6e48c7dcc1f83f8a4af6cfa4c119bb07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\design\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.0_468d91a542fe1436d4d3fccac6a73f3962894362\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.0_842e1462d2ee8eb1f9ccfad42ba9dc825e93464f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.4.0_1d261268be6013ebc3f9f6a5f3595424302112be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.4.0_db639056af8fda0dcce5227979614b35fa46cd43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.commonsware.cwac\camera\0.7.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3c52496d5177b4f45994244bc954babd31d7d24c">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.commonsware.cwac-camera-0.7.0_8a13dc902e1fdf511c0f0bf2224a3c6e4b2b5170\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.0_d8dbecf667d9336fca454304808d8b96102441d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.0_de1bc0ef09c3baeeb5f42bd137ca0e114dc6012d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_175e9ceacf6b0d173b133999522d2438af4a0f2c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.jakewharton.hugo\hugo-annotations\1.2.1\b01150795c5cdca1eb7e501bf00f105ff0e31501\hugo-annotations-1.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b01150795c5cdca1eb7e501bf00f105ff0e31501">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\hugo-annotations-1.2.1_f3c64ef974e88ad380cb5c6fdad62f1329ca6d8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_9dc449a11f3bd8cfe6a222ecbc3cbcdc980d5928\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_ae2e909db1ccead4e407f1c3fbb4a70e5592df70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_3a30463cac59973c0db6d49cb071ec581c85cbe0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67355078cd30daae43f62ba47a4663ee6edb976e">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_20cf25d160d326810a56057702eadb58b2c7cab5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_e4f69c6a26e209dff738661250e8e1b784db0acf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8ed8076acbe6527fb1ce10d748dbefcbbfaf49c8">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2b4158bdc59a67d825fce122042dc4f5fc166da9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_cce983c28ae42a6b9acf7c4ae7bdb00b11dea658\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.0_421713ec5c1eca9f69078e47c608f4fec5ce722a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/xlx/Downloads/InstaMaterial-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_7b62d368e72f18c7b72866dedf7ae93ad0860c16/classes.dex" />
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.0_ee4d39072ad0e088029244f2cd47c18c33b413bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="39a8ff2d1f79267907f5573c090b342b040b9682">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\aspectjrt-1.8.5_38086ad0d9a5adf7e2cef3f3a557cd4f8e4834a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.0_b64d5aea4de4fe4634447d5cffa52a5f29308896\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.0_b4f5d947a12ea11e6f998503584fb485017bebef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_4707f46870627b211194b48c29a0caa19a5bf084\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\libs\ksoap2-android-assembly-3.6.2-jar-with-dependencies.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b457441023b25f0b6bae28c76be982a4e49a8666">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\2\ksoap2-android-assembly-3.6.2-jar-with-dependencies_7f2adfcbf90f36572470e3740f13edfde91fedee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\androidSDK\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_261aef6ff188013a5eb6d759c8fbc32db824a380\classes.dex" />
     </item>
 
 </items>

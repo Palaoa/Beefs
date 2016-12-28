@@ -22,5 +22,9 @@ public class UserModel implements Serializable {
     public String password;
     public UserSecurityModel usm;
     //private String
+    public String follower;
 
+    public String following;
+
+    public String postNum;
 }

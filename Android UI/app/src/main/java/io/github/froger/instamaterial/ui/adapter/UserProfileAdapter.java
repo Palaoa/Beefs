@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.BindView;
 import io.github.froger.instamaterial.R;
 import io.github.froger.instamaterial.Utils;
+import io.github.froger.instamaterial.models.UserModel;
 
 /**
  * Created by Miroslaw Stanek on 20.01.15.
@@ -31,6 +33,7 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private static final int PHOTO_ANIMATION_DELAY = 600;
     private static final Interpolator INTERPOLATOR = new DecelerateInterpolator();
 
+    private UserModel userModel;
 
     private final Context context;
     private final int cellSize;
@@ -44,6 +47,12 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         this.context = context;
         this.cellSize = Utils.getScreenWidth(context) / 3;
         this.photos = Arrays.asList(context.getResources().getStringArray(R.array.user_photos));
+    }
+
+    public void updateUser(UserModel um)
+    {
+        userModel = um;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -61,6 +70,7 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         bindPhoto((PhotoViewHolder) holder, position);
     }
+
 
     private void bindPhoto(final PhotoViewHolder holder, int position) {
         Picasso.with(context)
@@ -112,12 +122,26 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         FrameLayout flRoot;
         @BindView(R.id.ivPhoto)
         ImageView ivPhoto;
+        /*@BindView(R.id.tvUserNickName)
+        TextView tvName;
+        @BindView(R.id.tvUserIntro)
+        TextView tvIntro;
+        @BindView(R.id.tvPostsNum)
+        TextView tvPostNum;
+        @BindView(R.id.tvFollowerNum)
+        TextView tvFollowerNum;
+        @BindView(R.id.tvFollowingNum)
+        TextView tvFollowingNum;
 
+        UserModel um;*/
         public PhotoViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
+
+
     }
+
 
     public void setLockedAnimations(boolean lockedAnimations) {
         this.lockedAnimations = lockedAnimations;

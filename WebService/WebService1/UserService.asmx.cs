@@ -82,29 +82,27 @@ namespace STWebService
         }
 
         [WebMethod(Description = "Add a story")]
-        public bool insertStory(String user_id, String password, String title, String content)
+        public bool insertStory(String user_id, String photo, String content)
         {
             int count = 0;
             Model.StoryModel sm = new Model.StoryModel();
-            if(dbOperation.queryExistUser(user_id,password))
+            count = dbOperation.countStory(user_id);
+            if(count != -1)
             {
-                count = dbOperation.countStory(user_id);
-                if(count != -1)
+                string id = count.ToString();
+                while (id.Length < 5)
                 {
-                    string id = count.ToString();
-                    while (id.Length < 5)
-                    {
-                        id = "0" + id;
-                    }
-                    id = "S" + user_id.Substring(1) + id;
-                    sm.user_id = user_id;
-                    sm.story_id = id;
-                    sm.title = title;
-                    sm.content = content;
-                    if(dbOperation.insertStory(sm))
-                    {
-                        return true;
-                    }
+                    id = "0" + id;
+                }
+                id = "S" + user_id.Substring(1) + id;
+                Byte[] buffer = Convert.FromBase64String(photo);
+                sm.user_id = user_id;
+                sm.story_id = id;
+                sm.photo = buffer;
+                sm.content = content;
+                if (dbOperation.insertStory(sm))
+                {
+                    return true;
                 }
             }
             return false;
@@ -148,6 +146,11 @@ namespace STWebService
             List<string> list = dbOperation.queryUser(nickname);
             if(list.Count != 0 && list[11] == password)
             {
+                List<String> l = dbOperation.countFollow(list[0]);
+                foreach (var i in l)
+                {
+                    list.Add(i);
+                }
                 return list.ToArray();
             }
             list.Clear();
@@ -233,15 +236,34 @@ namespace STWebService
         public string[] queryUserStory(String user_id)
         {
             List<string> list = new List<string>();
-            Model.StoryModel[] result = dbOperation.queryStory(user_id).ToArray();
+            Model.StBusiModel[] result = dbOperation.queryStory(user_id).ToArray();
             foreach (var i in result)
             {
                 list.Add(i.story_id);
-                list.Add(user_id);
+                list.Add(i.user_id);
+                list.Add(i.nickName);
                 list.Add(i.title);
                 list.Add(i.content);
-                list.Add(i.state.ToString());
-                list.Add(i.mshow.ToString());
+                list.Add(i.like_num);
+                list.Add(i.bl);
+            }
+            return list.ToArray();
+        }
+
+        [WebMethod(Description = "Query User Story")]
+        public string[] queryStoryLiked(String user_id)
+        {
+            List<string> list = new List<string>();
+            Model.StBusiModel[] result = dbOperation.queryStoryLiked(user_id).ToArray();
+            foreach (var i in result)
+            {
+                list.Add(i.story_id);
+                list.Add(i.user_id);
+                list.Add(i.nickName);
+                list.Add(i.title);
+                list.Add(i.content);
+                list.Add(i.like_num);
+                list.Add(i.bl);
             }
             return list.ToArray();
         }
@@ -280,11 +302,68 @@ namespace STWebService
             return list.ToArray();
         }
 
+        [WebMethod(Description = "query Story By Time top 100")]
+        public string[] queryStoryByTime(String user_id)
+        {
+            List<Model.StBusiModel> result = dbOperation.queryStoryByTime(user_id);
+            List<String> list = new List<string>();
+            foreach(var i in result)
+            {
+                list.Add(i.story_id);
+                list.Add(i.user_id);
+                list.Add(i.nickName);
+                list.Add(i.title);
+                list.Add(i.content);
+                list.Add(i.like_num);
+                list.Add(i.bl);
+            }
+            return list.ToArray();
+        }
+
         //mei xie wan
         [WebMethod(Description = "Update User Security Info(MeiXieWan)")]
         public bool updateUserSecurityInfo(String user_id, String personal_id, String question, String answer, String phone)
         {
             return false;
         }
+
+        [WebMethod(Description = "story like")]
+        public bool addStoryLike(String story_id, String user_id)
+        {
+            bool result = dbOperation.addStoryLike(story_id, user_id);
+            return result;
+        }
+
+        [WebMethod(Description = "story dislike")]
+        public bool deleteStoryLike(String story_id, String user_id)
+        {
+            bool result = dbOperation.deleteStoryLike(story_id, user_id);
+            return result;
+        }
+
+        [WebMethod(Description = "add follow")]
+        public bool addFollow(String er_id, String ing_id)
+        {
+            if(dbOperation.checkFollow(er_id, ing_id))
+            {
+                bool result = dbOperation.addFollow(er_id,ing_id);
+                return result;
+            }
+            return false;
+        }
+        
+        [WebMethod(Description = "query user by id")]
+        public string[] queryUserByID(String user_id)
+        {
+            List<String> list = dbOperation.queryUserByID(user_id);
+            List<String> l = dbOperation.countFollow(user_id);
+            foreach(var i in l)
+            {
+                list.Add(i);
+            }
+            return list.ToArray();
+        }
+
+
     }
 }

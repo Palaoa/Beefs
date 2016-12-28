@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using STWebService.Model;
+using System.IO;
 
 namespace STWebService
 {
@@ -181,11 +182,11 @@ namespace STWebService
             bool result = false;
             try
             {
-                string sql = "exist(select * from user where user.nickname = '" + nickname + ")";
+                string sql = "exist(select * from user where user.nickname = '" + nickname + "')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
-                if (reader.HasRows && reader[0] == "true")
+                if (reader.HasRows && (string)reader[0] == "true")
                 {
                     result = true;
                 }
@@ -228,32 +229,30 @@ namespace STWebService
             return result;
         }
 
-        public List<Model.StoryModel> queryStory(String user_id)
+        public List<Model.StBusiModel> queryStory(String user_id)
         {
-            List<Model.StoryModel> list = new List<Model.StoryModel>();
+            List<Model.StBusiModel> list = new List<Model.StBusiModel>();
             try
             {
-                string sql = "select story_id,title,content,state,mshow,edittime from story where user_id = '" 
-                    + user_id + "'";
+                /* select st.story_id, st.user_id, nickname, title, content, sl.ct, bl 
+                 * from (select story_id, user_id, title, content from story) as st, user, (select story_id, sum(user_id = '" + user_id + "') as bl, count(user_id) as ct from story_like group by story_id) as sl 
+                 * where sl.story_id = st.story_id and user.user_id = st.user_id*/
+                string sql = "select st.story_id, st.user_id, nickname, title, content, sl.ct, bl from (select story_id, user_id, title, content from story) as st, user, (select story_id, sum(user_id = '" + user_id + "') as bl, count(user_id) as ct from story_like group by story_id) as sl where sl.story_id = st.story_id and user.user_id = st.user_id and st.user_id ='" + user_id + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                Model.StoryModel sm = null;
+                Model.StBusiModel sm = null;
                 if(reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        sm = new StoryModel();
+                        sm = new StBusiModel();
                         sm.story_id = reader[0].ToString();
-                        sm.title = reader[1].ToString();
-                        sm.content = reader[2].ToString();
-                        sm.state = reader[3].ToString().ElementAt(0);
-                        sm.mshow = reader[4].ToString().ElementAt(0);
-                        string date = reader[5].ToString();
-                        if(date != "")
-                        {
-                            sm.editTime = DateTime.Parse(date);
-                        }
-                        
+                        sm.user_id = reader[1].ToString();
+                        sm.nickName = reader[2].ToString();
+                        sm.title = reader[3].ToString();
+                        sm.content = reader[4].ToString();
+                        sm.like_num = reader[5].ToString();
+                        sm.bl = reader[6].ToString();
                         list.Add(sm);
                     }
                 }
@@ -395,7 +394,7 @@ namespace STWebService
         {
             try
             {
-                string sql = "insert into user(user_id,password,nickname) values(" + "'" + user_id + "','" + password + "','"+ nickname + "')";
+                string sql = "insert into user(user_id,password,nickname) values('" + user_id + "','" + password + "','"+ nickname + "')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -464,15 +463,16 @@ namespace STWebService
         {
             try
             {
-                string sql = "insert into story (story_id,user_id,title,content,edittime) values('" + sm.story_id + "','" + sm.user_id + "','" 
-                    + sm.title + "','" + sm.content + "','" + DateTime.Now.ToString() +"')";
+                MySqlParameter parm = new MySqlParameter("?Photo", MySqlDbType.VarBinary);
+                parm.Value = sm.photo;
+                string sql = "insert into story (story_id,user_id,photo,content,edittime) values('" + sm.story_id + "','" + sm.user_id + "', ?Photo ,'" + sm.content + "','" + DateTime.Now.ToString() +"')";
                 MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.Parameters.Add(parm);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }
@@ -495,6 +495,16 @@ namespace STWebService
                 return false;
             }
         }
+
+        public bool insertComment(String commment_id, String story_id, String user_id, String content)
+        {
+            bool result = false;
+            string sql = "insert into comment (story_id,user_id,content,edittime,comment_id) values('" + story_id + "','" + user_id + "'," + content + ",'" + DateTime.Now.ToString() + "','" + commment_id + "')";
+
+            return result;
+        }
+
+        
   
         public bool deleteUserSecurity(String user_id)
         {
@@ -655,6 +665,279 @@ namespace STWebService
             }
             return false;
         }
+
+        public bool addStoryLike(String story_id, String user_id)
+        {
+            try
+            {
+                /* insert into story_like 
+                 * (story_id, user_id) 
+                 * select 'story_id', 'user_id' 
+                 * from dual 
+                 * where not exist 
+                 * (select * 
+                 * from story_like 
+                 * where story_id = 'story_id' and user_id = 'user_id') */
+                string sql = "insert into story_like (story_id, user_id) select '" + story_id + "','" + user_id + "' from dual where not exists ( select * from story_like where story_id = '" + story_id + "' and user_id = '" + user_id + "')";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool deleteStoryLike(String story_id, String user_id)
+        {
+            try
+            {
+                /* insert into story_like 
+                 * (story_id, user_id) 
+                 * select 'story_id', 'user_id' 
+                 * from dual 
+                 * where not exist 
+                 * (select * 
+                 * from story_like 
+                 * where story_id = 'story_id' and user_id = 'user_id') */
+                string sql = "delete from story_like where story_id = '" + story_id + "' and user_id = '" + user_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool deleteStoryLikeByStory(String story_id)
+        {
+            try
+            {
+                string sql = "delete from story_like where story_id = '" + story_id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        // shao Avatar Photo
+        public List<StBusiModel> queryStoryByTime(String user_id)
+        {
+            List<StBusiModel> result = new List<StBusiModel>();
+            /*select st.story_id, st.user_id, nickname, title, content, sl.ct, bl
+             * from (select story_id, user_id, title, content from story order by edittime desc) as st, user, (select story_id, sum(user_id = '0004') as bl, count(user_id) as ct from story_like group by story_id) as sl
+             where sl.story_id = st.story_id and user.user_id = st.user_id*/
+            String sql = "select st.story_id, st.user_id, nickname, title, content, sl.ct, bl from (select story_id, user_id, title, content from story order by edittime desc) as st, user, (select story_id, sum(user_id = '" + user_id + "') as bl, count(user_id) as ct from story_like group by story_id) as sl where sl.story_id = st.story_id and user.user_id = st.user_id";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Model.StBusiModel sm = null;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        sm = new StBusiModel();
+                        sm.story_id = reader[0].ToString();
+                        sm.user_id = reader[1].ToString();
+                        sm.nickName = reader[2].ToString();
+                        sm.title = reader[3].ToString();
+                        sm.content = reader[4].ToString();
+                        sm.like_num = reader[5].ToString();
+                        sm.bl = reader[6].ToString();
+                        result.Add(sm);
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch(Exception e)
+            {
+
+            }
+            return result;
+        }
+
+        public List<StBusiModel> queryStoryLiked(String user_id)
+        {
+            List<StBusiModel> result = new List<StBusiModel>();
+            /*select st.story_id, st.user_id, nickname, title, content, sl.ct, bl
+             * from (select story_id, user_id, title, content from story order by edittime desc) as st, user, (select story_id, sum(user_id = '0004') as bl, count(user_id) as ct, user_id from story_like group by story_id) as sl, story_like as sl2
+             where sl.story_id = st.story_id and user.user_id = st.user_id and */
+            String sql = "select st.story_id, st.user_id, nickname, title, content, sl.ct, bl from (select story_id, user_id, title, content from story) as st, user, (select story_id, sum(user_id = '" + user_id + "') as bl, count(user_id) as ct from story_like group by story_id) as sl, story_like as sl2 where sl.story_id = st.story_id and user.user_id = st.user_id and sl2.user_id ='" + user_id + "' and sl2.story_id = sl.story_id";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Model.StBusiModel sm = null;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        sm = new StBusiModel();
+                        sm.story_id = reader[0].ToString();
+                        sm.user_id = reader[1].ToString();
+                        sm.nickName = reader[2].ToString();
+                        sm.title = reader[3].ToString();
+                        sm.content = reader[4].ToString();
+                        sm.like_num = reader[5].ToString();
+                        sm.bl = reader[6].ToString();
+                        result.Add(sm);
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return result;
+        }
+
+        public bool addFollow(String er_id, String ing_id)
+        {
+            bool result = false;
+            String sql = "insert into user_follow (fwer_id, fwing_id) values ('" + er_id + "','" + ing_id + "')";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
+        public bool checkFollow(String er_id, String ing_id)
+        {
+            bool result = false;
+            String sql = "select * from user_follow where fwer_id = '" + er_id + "' and fwing_id ='" + ing_id + "'";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                //Model.StBusiModel sm = null;
+                if (!reader.HasRows)
+                {
+                    result = true;
+                }
+                reader.Close();
+                cmd.Dispose();
+            
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
+        public List<string> queryUserByID(String nickname)
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                string sql = "select * from user where user_id = '" + nickname + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(reader[0].ToString());
+                        list.Add(reader[1].ToString());
+                        list.Add(reader[2].ToString());
+                        list.Add(reader[3].ToString());
+                        list.Add(reader[4].ToString());
+                        list.Add(reader[5].ToString());
+                        list.Add(reader[6].ToString());
+                        list.Add(reader[7].ToString());
+                        list.Add(reader[8].ToString());
+                        list.Add(reader[9].ToString());
+                        list.Add(reader[10].ToString());
+                        list.Add(reader[11].ToString());
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return list;
+        }
+
+        public List<string> countFollow(String user_id)
+        {
+            List<string> result = new List<string>();
+            // Cha Zhao Follower
+            String sql1 = "select count(fwer_id) from user_follow where fwing_id ='" + user_id + "'";
+            // Following
+            String sql2 = "select count(fwing_id) from user_follow where fwer_id ='" + user_id + "'";
+            // posts num
+            String sql3 = "select count(story_id) from story where user_id = '" + user_id + "'";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql1, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                if(reader.HasRows)
+                {
+                    result.Add(reader[0].ToString());
+                }
+                reader.Close();
+                cmd.Dispose();
+
+                cmd = new MySqlCommand(sql2, sqlCon);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    result.Add(reader[0].ToString());
+                }
+                reader.Close();
+                cmd.Dispose();
+
+                cmd = new MySqlCommand(sql3, sqlCon);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    result.Add(reader[0].ToString());
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch(Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
+
     }  
 
 }

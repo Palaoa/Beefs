@@ -12,17 +12,24 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
+import io.github.froger.instamaterial.QueryManager;
 import io.github.froger.instamaterial.R;
+import io.github.froger.instamaterial.ResultParce;
+import io.github.froger.instamaterial.models.UserModel;
 import io.github.froger.instamaterial.ui.adapter.UserProfileAdapter;
 import io.github.froger.instamaterial.ui.utils.CircleTransformation;
 import io.github.froger.instamaterial.ui.view.RevealBackgroundView;
 
 
-public class UserProfileActivity extends BaseDrawerActivity implements RevealBackgroundView.OnStateChangeListener {
+public class UserProfileActivity extends BaseDrawerActivity implements RevealBackgroundView.OnStateChangeListener
+{
     public static final String ARG_REVEAL_START_LOCATION = "reveal_start_location";
 
     private static final int USER_OPTIONS_ANIMATION_DELAY = 300;
@@ -47,13 +54,27 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
     @BindView(R.id.vUserProfileRoot)
     View vUserProfileRoot;
 
+    @BindView(R.id.tvUserNickName)
+    TextView tvName;
+    @BindView(R.id.tvUserIntro)
+    TextView tvIntro;
+    @BindView(R.id.tvPostsNum)
+    TextView tvPostNum;
+    @BindView(R.id.tvFollowerNum)
+    TextView tvFollowerNum;
+    @BindView(R.id.tvFollowingNum)
+    TextView tvFollowingNum;
+
+    UserModel userModel;
+    BaseActivity ba;
     private int avatarSize;
     private String profilePhoto;
     private UserProfileAdapter userPhotosAdapter;
 
-    public static void startUserProfileFromLocation(int[] startingLocation, Activity startingActivity) {
+    public static void startUserProfileFromLocation(int[] startingLocation, Activity startingActivity, String user_id) {
         Intent intent = new Intent(startingActivity, UserProfileActivity.class);
         intent.putExtra(ARG_REVEAL_START_LOCATION, startingLocation);
+        intent.putExtra("user_id",user_id);
         startingActivity.startActivity(intent);
     }
 
@@ -61,7 +82,8 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+        ba = this;
+        //String user_id = getIntent().getExtras("user_id");
         this.avatarSize = getResources().getDimensionPixelSize(R.dimen.user_profile_avatar_size);
         this.profilePhoto = getString(R.string.user_profile_photo);
 
@@ -72,9 +94,12 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
                 .centerCrop()
                 .transform(new CircleTransformation())
                 .into(ivUserProfilePhoto);
+        String user_id = getIntent().getStringExtra("user_id");
+        startQueryUserBaseInfo(user_id);
 
         setupTabs();
         setupUserProfileGrid();
+
         setupRevealBackground(savedInstanceState);
     }
 
@@ -83,6 +108,7 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
         tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setIcon(R.drawable.ic_list_white));
         tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setIcon(R.drawable.ic_place_white));
         tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setIcon(R.drawable.ic_label_white));
+
     }
 
     private void setupUserProfileGrid() {
@@ -94,6 +120,7 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
                 userPhotosAdapter.setLockedAnimations(true);
             }
         });
+
     }
 
     private void setupRevealBackground(Bundle savedInstanceState) {
@@ -148,9 +175,30 @@ public class UserProfileActivity extends BaseDrawerActivity implements RevealBac
            vUserStats.animate().alpha(1).setDuration(200).setStartDelay(400).setInterpolator(INTERPOLATOR).start();
     }
 
+    private void startQueryUserBaseInfo(String user_id)
+    {
+        QueryManager qm = new QueryManager(ba);
+        qm.execute("queryUserByID","user_id",user_id);
+    }
+
     @Override
     public void getResult(ArrayList<String> result)
     {
-
+        String method = result.get(0);
+        if(method == "queryUserByID")
+        {
+            try {
+                userModel = ResultParce.parseUser(result.get(1)).get(0);
+                tvName.setText(userModel.nickname);
+                tvIntro.setText(userModel.slogan);
+                tvPostNum.setText(userModel.postNum);
+                tvFollowerNum.setText(userModel.follower);
+                tvFollowingNum.setText(userModel.following);
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 }

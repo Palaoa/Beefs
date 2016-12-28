@@ -1,6 +1,7 @@
 package io.github.froger.instamaterial.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -136,9 +138,9 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return feedItems.size();
     }
 
-    public void updateItems(boolean animated) {
+    public void updateItems(boolean animated,ArrayList<FeedItem> feedList) {
         feedItems.clear();
-        feedItems.addAll(Arrays.asList(
+        /*feedItems.addAll(Arrays.asList(
                 new FeedItem(33, false),
                 new FeedItem(1, false),
                 new FeedItem(223, false),
@@ -146,7 +148,11 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 new FeedItem(6, false),
                 new FeedItem(8, false),
                 new FeedItem(99, false)
-        ));
+        ));*/
+        for(int i =0;i<feedList.size();i++)
+        {
+            feedItems.add(feedList.get(i));
+        }
         if (animated) {
             notifyItemRangeInserted(0, feedItems.size());
         } else {
@@ -166,8 +172,8 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static class CellFeedViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.ivFeedCenter)
         ImageView ivFeedCenter;
-        @BindView(R.id.ivFeedBottom)
-        ImageView ivFeedBottom;
+        //@BindView(R.id.ivFeedBottom)
+        //ImageView ivFeedBottom;
         @BindView(R.id.btnComments)
         ImageButton btnComments;
         @BindView(R.id.btnLike)
@@ -184,6 +190,10 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ImageView ivUserProfile;
         @BindView(R.id.vImageRoot)
         FrameLayout vImageRoot;
+        @BindView(R.id.tvFeedSendName)
+        TextView tvFeedSendName;
+        @BindView(R.id.tvFeedContent)
+        TextView tvFeedContent;
 
         FeedItem feedItem;
 
@@ -196,11 +206,13 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             this.feedItem = feedItem;
             int adapterPosition = getAdapterPosition();
             ivFeedCenter.setImageResource(adapterPosition % 2 == 0 ? R.drawable.img_feed_center_1 : R.drawable.img_feed_center_2);
-            ivFeedBottom.setImageResource(adapterPosition % 2 == 0 ? R.drawable.img_feed_bottom_1 : R.drawable.img_feed_bottom_2);
+            //ivFeedBottom.setImageResource(adapterPosition % 2 == 0 ? R.drawable.img_feed_bottom_1 : R.drawable.img_feed_bottom_2);
             btnLike.setImageResource(feedItem.isLiked ? R.drawable.ic_heart_red : R.drawable.ic_heart_outline_grey);
             tsLikesCounter.setCurrentText(vImageRoot.getResources().getQuantityString(
                     R.plurals.likes_count, feedItem.likesCount, feedItem.likesCount
             ));
+            tvFeedSendName.setText(feedItem.nickName);
+            tvFeedContent.setText(feedItem.content);
         }
 
         public FeedItem getFeedItem() {
@@ -224,9 +236,15 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public static class FeedItem {
+        public String user_id;
+        public String story_id;
+        public String nickName;
+        public String title;
+        public String content;
         public int likesCount;
         public boolean isLiked;
-
+        public Bitmap bitmap;
+        public FeedItem(){}
         public FeedItem(int likesCount, boolean isLiked) {
             this.likesCount = likesCount;
             this.isLiked = isLiked;

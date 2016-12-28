@@ -73,21 +73,24 @@
                                 android:layout_height="wrap_content"
                                 android:text="John Smith"
                                 android:textColor="#ffffff"
-                                android:textSize="24sp" />
+                                android:textSize="24sp"
+                                android:id="@+id/tvUserNickName"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="\@jsmith"
                                 android:textColor="#bbbbbb"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                android:id="@+id/tvUserAt"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Mobile development passionate."
                                 android:textColor="#ffffff"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                android:id="@+id/tvUserIntro"/>
 
                             <Button
                                 android:id="@+id/btnFollow"
@@ -98,7 +101,8 @@
                                 android:background="@drawable/btn_following"
                                 android:text="following"
                                 android:textColor="#ffffff"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -123,7 +127,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="1167"
                                 android:textColor="#ffffff"
-                                android:textSize="20sp" />
+                                android:textSize="20sp"
+                                android:id="@+id/tvPostsNum"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -144,6 +149,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="396"
+                                android:id="@+id/tvFollowerNum"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
 
@@ -166,6 +172,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="485"
+                                android:id="@+id/tvFollowingNum"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
 
@@ -218,7 +225,12 @@
             </FrameLayout>
 
         </android.support.design.widget.AppBarLayout>
-
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvUserProfileInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnCreate"
             android:layout_width="wrap_content"

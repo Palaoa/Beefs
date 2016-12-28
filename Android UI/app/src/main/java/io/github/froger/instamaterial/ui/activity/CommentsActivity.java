@@ -15,6 +15,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import io.github.froger.instamaterial.R;
 import io.github.froger.instamaterial.Utils;
