@@ -57,8 +57,22 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 holder.tvComment.setText("Cupcake ipsum dolor sit. Amet gingerbread cupcake. Gummies ice cream dessert icing marzipan apple pie dessert sugar plum.");
                 break;
         }*/
-        holder.tvComment.setText(comItems.get(position).content);
-
+        if(comItems != null) {
+            holder.tvComment.setText(comItems.get(position).content);
+        }
+        else {
+            switch (position % 3) {
+                case 0:
+                    holder.tvComment.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit.");
+                    break;
+                case 1:
+                    holder.tvComment.setText("Cupcake ipsum dolor sit amet bear claw.");
+                    break;
+                case 2:
+                    holder.tvComment.setText("Cupcake ipsum dolor sit. Amet gingerbread cupcake. Gummies ice cream dessert icing marzipan apple pie dessert sugar plum.");
+                    break;
+            }
+        }
         Picasso.with(context)
                 .load(R.drawable.ic_launcher)
                 .centerCrop()
@@ -96,6 +110,8 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public void updateItems(ArrayList<ComtBusiModel> list) {
         itemsCount = list.size();
+        if(comItems==null)
+            comItems = new ArrayList<>();
         comItems.clear();
         for(int i =0;i<itemsCount;i++)
         {
@@ -105,7 +121,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void updateItems() {
-        itemsCount = 10;
+        itemsCount = 0;
         notifyDataSetChanged();
     }
 

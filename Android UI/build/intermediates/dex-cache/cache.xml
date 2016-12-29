@@ -12,6 +12,114 @@
     </item>
     <item
         is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton.timber\timber\4.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b5d7ba9e868a9251dca3277fcbf494dc59632eff">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton.timber-timber-4.3.1_76184b666cd5d4a690d9a868c087450a5fdd8645\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.4.0_1d261268be6013ebc3f9f6a5f3595424302112be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_175e9ceacf6b0d173b133999522d2438af4a0f2c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_9dc449a11f3bd8cfe6a222ecbc3cbcdc980d5928\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_ae2e909db1ccead4e407f1c3fbb4a70e5592df70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_3a30463cac59973c0db6d49cb071ec581c85cbe0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_e4f69c6a26e209dff738661250e8e1b784db0acf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ed59c9f8ca2c0cc74dd0ca13a8617c2bf150a4b1">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2b4158bdc59a67d825fce122042dc4f5fc166da9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_cce983c28ae42a6b9acf7c4ae7bdb00b11dea658\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="39a8ff2d1f79267907f5573c090b342b040b9682">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\aspectjrt-1.8.5_38086ad0d9a5adf7e2cef3f3a557cd4f8e4834a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.0_b64d5aea4de4fe4634447d5cffa52a5f29308896\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\androidSDK\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_261aef6ff188013a5eb6d759c8fbc32db824a380\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -25,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="fea7efdaa7ff0ef7c991b642329ae9a92211bfb7">
+        sha1="2c5ad5e5169ec68cd7c8235dc0d6a6fb40a207a9">
         <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ed0c48502801f74cc2102d0fd062927b314417e5\classes.dex" />
     </item>
     <item
@@ -45,15 +153,6 @@
         revision="25.0.0"
         sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
         <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.0_10067b41d6f86aad6aefd5c99d32b8b24b48eee6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton.timber\timber\4.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b5d7ba9e868a9251dca3277fcbf494dc59632eff">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton.timber-timber-4.3.1_76184b666cd5d4a690d9a868c087450a5fdd8645\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,15 +201,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.4.0_1d261268be6013ebc3f9f6a5f3595424302112be\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar"
         jumboMode="true"
         optimize="true"
@@ -147,15 +237,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_175e9ceacf6b0d173b133999522d2438af4a0f2c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.jakewharton.hugo\hugo-annotations\1.2.1\b01150795c5cdca1eb7e501bf00f105ff0e31501\hugo-annotations-1.2.1.jar"
         jumboMode="true"
         optimize="true"
@@ -165,66 +246,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_9dc449a11f3bd8cfe6a222ecbc3cbcdc980d5928\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_ae2e909db1ccead4e407f1c3fbb4a70e5592df70\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_3a30463cac59973c0db6d49cb071ec581c85cbe0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="67355078cd30daae43f62ba47a4663ee6edb976e">
         <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_20cf25d160d326810a56057702eadb58b2c7cab5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_e4f69c6a26e209dff738661250e8e1b784db0acf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8ed8076acbe6527fb1ce10d748dbefcbbfaf49c8">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2b4158bdc59a67d825fce122042dc4f5fc166da9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_cce983c28ae42a6b9acf7c4ae7bdb00b11dea658\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -243,24 +270,6 @@
         revision="25.0.0"
         sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
         <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.0_ee4d39072ad0e088029244f2cd47c18c33b413bf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="39a8ff2d1f79267907f5573c090b342b040b9682">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\aspectjrt-1.8.5_38086ad0d9a5adf7e2cef3f3a557cd4f8e4834a9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\learn\Project\Beefs\Android UI\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.0_b64d5aea4de4fe4634447d5cffa52a5f29308896\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -288,15 +297,6 @@
         revision="25.0.0"
         sha1="b457441023b25f0b6bae28c76be982a4e49a8666">
         <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\2\ksoap2-android-assembly-3.6.2-jar-with-dependencies_7f2adfcbf90f36572470e3740f13edfde91fedee\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\androidSDK\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="F:\learn\Project\Beefs\Android UI\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_261aef6ff188013a5eb6d759c8fbc32db824a380\classes.dex" />
     </item>
 
 </items>

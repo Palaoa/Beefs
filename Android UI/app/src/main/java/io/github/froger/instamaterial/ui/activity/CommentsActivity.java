@@ -21,8 +21,10 @@ import butterknife.BindView;
 import io.github.froger.instamaterial.QueryManager;
 import io.github.froger.instamaterial.R;
 import io.github.froger.instamaterial.ResultParce;
+import io.github.froger.instamaterial.UserAccount;
 import io.github.froger.instamaterial.Utils;
 import io.github.froger.instamaterial.models.ComtBusiModel;
+import io.github.froger.instamaterial.models.UserModel;
 import io.github.froger.instamaterial.ui.adapter.CommentsAdapter;
 import io.github.froger.instamaterial.ui.view.SendCommentButton;
 
@@ -49,11 +51,11 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comments);
+        mstory_id = getIntent().getStringExtra(ARG_STORY_ID);
         setupComments();
         setupSendCommentButton();
 
         drawingStartLocation = getIntent().getIntExtra(ARG_DRAWING_START_LOCATION, 0);
-        mstory_id = getIntent().getStringExtra(ARG_DRAWING_START_LOCATION);
         if (savedInstanceState == null) {
             contentRoot.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                 @Override
@@ -64,10 +66,10 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
                 }
             });
         }
-        if(!mstory_id.isEmpty() && mstory_id != null)
-        {
+        if (mstory_id != null) {
             startQuery();
         }
+
     }
 
     private void setupComments() {
@@ -113,7 +115,7 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
     }
 
     private void animateContent() {
-        commentsAdapter.updateItems();
+        //commentsAdapter.updateItems();
         llAddComment.animate().translationY(0)
                 .setInterpolator(new DecelerateInterpolator())
                 .setDuration(200)
@@ -165,13 +167,24 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
 
     private void startQuery()
     {
+        //mstory_id = getIntent().getStringExtra(ARG_STORY_ID);
         QueryManager qm = new QueryManager(this);
         qm.execute("queryCommentByStoryID","story_id",mstory_id);
     }
 
     private void startInsert(String content)
     {
-
+        UserModel um = UserAccount.getInstance().getUser();
+        //Yao Gai!!!
+        if(um == null)
+        {
+            um = new UserModel();
+            um.nickname = "Test1";
+            um.user_id = "0001";
+            UserAccount.getInstance().setUser(um);
+        }
+        QueryManager qm = new QueryManager(this);
+        qm.execute("insertComment","story_id",mstory_id,"user_id",um.user_id,"content",content);
     }
 
     @Override
