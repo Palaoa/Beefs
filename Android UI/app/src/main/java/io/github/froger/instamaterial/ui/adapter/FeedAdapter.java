@@ -80,9 +80,50 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             public void onClick(View v) {
                 int adapterPosition = cellFeedViewHolder.getAdapterPosition();
                 boolean isLiked = feedItems.get(adapterPosition).isLiked;
+                String story_id = feedItems.get(adapterPosition).story_id;
                 if(isLiked)
                 {
                     feedItems.get(adapterPosition).likesCount--;
+                    feedItems.get(adapterPosition).isLiked = false;
+
+                    notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
+                    if (context instanceof MainActivity) {
+                        ((MainActivity) context).showDislikedSnakebar();
+                        ((MainActivity) context).changeLikedSituation(false,story_id);
+                    }
+                    if(context instanceof MyFeedActivity)
+                    {
+                        ((MyFeedActivity) context).showDislikedSnakebar();
+                        ((MyFeedActivity) context).changeLikedSituation(false,story_id);
+                    }
+                }
+                else
+                {
+                    feedItems.get(adapterPosition).likesCount++;
+                    feedItems.get(adapterPosition).isLiked = true;
+                    notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
+                    if (context instanceof MainActivity) {
+                        ((MainActivity) context).showLikedSnackbar();
+                        ((MainActivity) context).changeLikedSituation(true,story_id);
+                    }
+                    if(context instanceof MyFeedActivity)
+                    {
+                        ((MyFeedActivity) context).showLikedSnackbar();
+                        ((MyFeedActivity) context).changeLikedSituation(true,story_id);
+                    }
+                }
+
+            }
+        });
+        cellFeedViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int adapterPosition = cellFeedViewHolder.getAdapterPosition();
+                boolean isLiked = feedItems.get(adapterPosition).isLiked;
+                if(isLiked)
+                {
+                    feedItems.get(adapterPosition).likesCount--;
+                    feedItems.get(adapterPosition).isLiked = false;
                     notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
                     if (context instanceof MainActivity) {
                         ((MainActivity) context).showDislikedSnakebar();
@@ -95,6 +136,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 else
                 {
                     feedItems.get(adapterPosition).likesCount++;
+                    feedItems.get(adapterPosition).isLiked = true;
                     notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
                     if (context instanceof MainActivity) {
                         ((MainActivity) context).showLikedSnackbar();
@@ -103,18 +145,6 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     {
                         ((MyFeedActivity) context).showLikedSnackbar();
                     }
-                }
-
-            }
-        });
-        cellFeedViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int adapterPosition = cellFeedViewHolder.getAdapterPosition();
-                feedItems.get(adapterPosition).likesCount++;
-                notifyItemChanged(adapterPosition, ACTION_LIKE_BUTTON_CLICKED);
-                if (context instanceof MainActivity) {
-                    ((MainActivity) context).showLikedSnackbar();
                 }
             }
         });

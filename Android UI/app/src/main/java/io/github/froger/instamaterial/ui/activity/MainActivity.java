@@ -223,6 +223,29 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
         Snackbar.make(clContent, "Disliked!", Snackbar.LENGTH_SHORT).show();
     }
 
+    // true insert false dislike
+    public void changeLikedSituation(boolean islike, String story_id)
+    {
+        QueryManager qm = new QueryManager(ba);
+        UserModel um = UserAccount.getInstance().getUser();
+        //Yao Gai!!!
+        if(um == null)
+        {
+            um = new UserModel();
+            um.nickname = "Test1";
+            um.user_id = "0001";
+            UserAccount.getInstance().setUser(um);
+        }
+
+        if(islike)
+        {
+            qm.execute("addStoryLike","user_id",um.user_id,"story_id",story_id);
+            return;
+        }
+        qm.execute("deleteStoryLike","user_id",um.user_id,"story_id",story_id);
+
+    }
+
     @Override
     public void getResult(ArrayList<String> result)
     {

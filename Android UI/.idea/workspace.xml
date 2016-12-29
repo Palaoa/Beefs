@@ -39,11 +39,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="FeedAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3160">
+              <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+              <folding>
+                <element signature="method#updateItems#0;class#FeedAdapter#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="253" selection-end-column="9" />
+            <state relative-caret-position="258">
+              <caret line="246" column="5" selection-start-line="226" selection-start-column="4" selection-end-line="246" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3052#3302#0" expanded="true" />
@@ -56,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentsActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommentsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="58">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="e#2346#2652#0" expanded="true" />
                 <element signature="e#2651#2652#0" expanded="true" />
@@ -82,8 +94,8 @@
       <file leaf-file-name="CommentsAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="122">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +138,8 @@
       <file leaf-file-name="MyFeedActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3760">
-              <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+            <state relative-caret-position="661">
+              <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1958,11 +1970,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/models/CommentsModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/models/ComtBusiModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ResultParce.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java" />
       </list>
     </option>
   </component>
@@ -2601,7 +2613,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2626,7 +2638,7 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32136753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2991453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2719,39 +2731,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
-          <line>147</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
-          <line>159</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
-          <line>114</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
           <line>40</line>
           <properties />
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
-          <line>220</line>
-          <properties />
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java</url>
@@ -2772,20 +2754,14 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java</url>
-          <line>126</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java</url>
-          <line>138</line>
+          <line>168</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java</url>
-          <line>203</line>
+          <line>233</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
@@ -2881,7 +2857,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java</url>
-          <line>231</line>
+          <line>253</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
@@ -2893,13 +2869,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java</url>
-          <line>227</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java</url>
-          <line>242</line>
+          <line>264</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
@@ -2964,48 +2940,6 @@
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java</url>
-          <line>142</line>
-          <properties />
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java</url>
-          <line>192</line>
-          <properties />
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="163" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java</url>
-          <line>111</line>
-          <properties />
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java</url>
           <line>123</line>
           <properties />
@@ -3024,7 +2958,7 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="183" />
+      <option name="time" value="186" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3286,14 +3220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/PublishActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
@@ -3405,14 +3331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3760">
-          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/QueryManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -3431,20 +3349,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1929">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="122">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
-            <element signature="method#updateItems#0;class#FeedAdapter#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#2346#2652#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedItemAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="e#5930#6059#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="253" selection-end-column="9" />
+        <state relative-caret-position="258">
+          <caret line="246" column="5" selection-start-line="226" selection-start-column="4" selection-end-line="246" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3052#3302#0" expanded="true" />
@@ -3456,23 +3395,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/CommentsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/MyFeedActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="661">
+          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/activity/CommentsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/github/froger/instamaterial/ui/adapter/FeedAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        <state relative-caret-position="-3160">
+          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
           <folding>
-            <element signature="e#2346#2652#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="method#updateItems#0;class#FeedAdapter#0" expanded="false" />
           </folding>
         </state>
       </provider>
