@@ -18,15 +18,18 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import io.github.froger.instamaterial.QueryManager;
 import io.github.froger.instamaterial.R;
+import io.github.froger.instamaterial.ResultParce;
 import io.github.froger.instamaterial.Utils;
+import io.github.froger.instamaterial.models.ComtBusiModel;
 import io.github.froger.instamaterial.ui.adapter.CommentsAdapter;
 import io.github.froger.instamaterial.ui.view.SendCommentButton;
 
 
 public class CommentsActivity extends BaseDrawerActivity implements SendCommentButton.OnSendClickListener {
     public static final String ARG_DRAWING_START_LOCATION = "arg_drawing_start_location";
-
+    public static final String ARG_STORY_ID = "arg_story_id";
     @BindView(R.id.contentRoot)
     LinearLayout contentRoot;
     @BindView(R.id.rvComments)
@@ -40,6 +43,7 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
 
     private CommentsAdapter commentsAdapter;
     private int drawingStartLocation;
+    private String mstory_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
         setupSendCommentButton();
 
         drawingStartLocation = getIntent().getIntExtra(ARG_DRAWING_START_LOCATION, 0);
+        mstory_id = getIntent().getStringExtra(ARG_DRAWING_START_LOCATION);
         if (savedInstanceState == null) {
             contentRoot.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                 @Override
@@ -58,6 +63,10 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
                     return true;
                 }
             });
+        }
+        if(!mstory_id.isEmpty() && mstory_id != null)
+        {
+            startQuery();
         }
     }
 
@@ -130,7 +139,12 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
     @Override
     public void onSendClickListener(View v) {
         if (validateComment()) {
-            commentsAdapter.addItem();
+            String content = etComment.getText().toString();
+            ComtBusiModel item = new ComtBusiModel();
+            item.content = content;
+            item.story_id = mstory_id;
+            startInsert(content);
+            commentsAdapter.addItem(item);
             commentsAdapter.setAnimationsLocked(false);
             commentsAdapter.setDelayEnterAnimation(false);
             rvComments.smoothScrollBy(0, rvComments.getChildAt(0).getHeight() * commentsAdapter.getItemCount());
@@ -149,9 +163,37 @@ public class CommentsActivity extends BaseDrawerActivity implements SendCommentB
         return true;
     }
 
+    private void startQuery()
+    {
+        QueryManager qm = new QueryManager(this);
+        qm.execute("queryCommentByStoryID","story_id",mstory_id);
+    }
+
+    private void startInsert(String content)
+    {
+
+    }
+
     @Override
     public void getResult(ArrayList<String> result)
     {
+        String methodName = result.get(0);
+        switch(methodName)
+        {
+            case "queryCommentByStoryID":
+                try {
+                    ArrayList<ComtBusiModel> cm = ResultParce.parseComment(result.get(1));
+                    commentsAdapter.updateItems(cm);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
 
+                break;
+            default:
+                break;
+
+        }
     }
 }

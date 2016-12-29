@@ -390,6 +390,37 @@ namespace STWebService
             return result;
         }
 
+        public List<CommentModel> queryCommentByStoryID(String story_id)
+        {
+            List<CommentModel> result = new List<CommentModel>();
+            String sql = "select comment_id,user_id,content from comment where story_id ='" + story_id + "'";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                CommentModel cm = new CommentModel();
+                if(reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        cm.comment_id = reader[0].ToString();
+                        cm.user_id = reader[1].ToString();
+                        cm.content = reader[2].ToString();
+                        result.Add(cm);
+                        cm = new CommentModel();
+                    }
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch(Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
         public bool insertUser(String user_id,String password,String nickname)
         {
             try
@@ -499,12 +530,22 @@ namespace STWebService
         public bool insertComment(String commment_id, String story_id, String user_id, String content)
         {
             bool result = false;
-            string sql = "insert into comment (story_id,user_id,content,edittime,comment_id) values('" + story_id + "','" + user_id + "'," + content + ",'" + DateTime.Now.ToString() + "','" + commment_id + "')";
+            string sql = "insert into comment (story_id,user_id,content,edittime,comment_id) values('" + story_id + "','" + user_id + "','" + content + "','" + DateTime.Now.ToString() + "','" + commment_id + "')";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
 
+                result = true;
+            }
+            catch(Exception e)
+            {
+                result = false;
+            }
             return result;
         }
 
-        
   
         public bool deleteUserSecurity(String user_id)
         {
@@ -937,6 +978,27 @@ namespace STWebService
             return result;
         }
 
+        public int countComment()
+        {
+            string sql = "select count(comment_id) from comment";
+            int result = -1;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    result = Int32.Parse(reader[0].ToString());
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return result;
+        }
 
     }  
 

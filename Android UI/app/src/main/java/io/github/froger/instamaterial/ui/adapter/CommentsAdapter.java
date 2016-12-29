@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 import butterknife.BindView;
 import io.github.froger.instamaterial.R;
 import io.github.froger.instamaterial.ui.utils.RoundedTransformation;
-
+import io.github.froger.instamaterial.models.ComtBusiModel;
 
 public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -25,7 +27,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private int itemsCount = 0;
     private int lastAnimatedPosition = -1;
     private int avatarSize;
-
+    private ArrayList<ComtBusiModel> comItems;
     private boolean animationsLocked = false;
     private boolean delayEnterAnimation = true;
 
@@ -44,7 +46,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         runEnterAnimation(viewHolder.itemView, position);
         CommentViewHolder holder = (CommentViewHolder) viewHolder;
-        switch (position % 3) {
+        /*switch (position % 3) {
             case 0:
                 holder.tvComment.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit.");
                 break;
@@ -54,7 +56,8 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             case 2:
                 holder.tvComment.setText("Cupcake ipsum dolor sit. Amet gingerbread cupcake. Gummies ice cream dessert icing marzipan apple pie dessert sugar plum.");
                 break;
-        }
+        }*/
+        holder.tvComment.setText(comItems.get(position).content);
 
         Picasso.with(context)
                 .load(R.drawable.ic_launcher)
@@ -91,13 +94,24 @@ public class CommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return itemsCount;
     }
 
+    public void updateItems(ArrayList<ComtBusiModel> list) {
+        itemsCount = list.size();
+        comItems.clear();
+        for(int i =0;i<itemsCount;i++)
+        {
+            comItems.add(list.get(i));
+        }
+        notifyDataSetChanged();
+    }
+
     public void updateItems() {
         itemsCount = 10;
         notifyDataSetChanged();
     }
 
-    public void addItem() {
+    public void addItem(ComtBusiModel item) {
         itemsCount++;
+        comItems.add(item);
         notifyItemInserted(itemsCount - 1);
     }
 

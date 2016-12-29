@@ -341,6 +341,64 @@ public class ResultParce {
         return result;
     }
 
+    public static ArrayList<ComtBusiModel> parseComment(String response) throws Exception
+    {
+        ArrayList<ComtBusiModel> result = new ArrayList<>();
+        if(response.contains("false"))
+        {
+            return result;
+        }
+        if (!response.isEmpty()) {
+            String[] array = response.split(";");
+            if (array.length > 3) {
+                int i = 0;
+                int count = 0;
+                //SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+                ComtBusiModel model = new ComtBusiModel();
+                int length = array.length;
+                //12
+                while (i < length) {
+                    String str = array[i++];
+                    String[] strs = str.split("=");
+                    if (strs.length == 2) {
+                        switch (count) {
+                            case 0:
+                                count++;
+                                model.comment_id = strs[1];
+                                break;
+                            case 1:
+                                count++;
+                                model.user_id = strs[1];
+                                break;
+                            case 2:
+                                count++;
+                                model.story_id = strs[1];
+                                break;
+                            case 3:
+                                count = 0;
+                                model.content = strs[1];
+                                result.add(model);
+                                model = new ComtBusiModel();
+                                break;
+                            default:
+                                break;
+
+                        }
+                    }
+
+                }
+
+
+            } else {
+
+            }
+        }
+
+
+
+        return result;
+    }
+
 }
 
 

@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.froger.instamaterial.R;
 import io.github.froger.instamaterial.ui.activity.MainActivity;
+import io.github.froger.instamaterial.ui.activity.MyFeedActivity;
 import io.github.froger.instamaterial.ui.view.LoadingFeedItemView;
 
 
@@ -78,11 +79,32 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             @Override
             public void onClick(View v) {
                 int adapterPosition = cellFeedViewHolder.getAdapterPosition();
-                feedItems.get(adapterPosition).likesCount++;
-                notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
-                if (context instanceof MainActivity) {
-                    ((MainActivity) context).showLikedSnackbar();
+                boolean isLiked = feedItems.get(adapterPosition).isLiked;
+                if(isLiked)
+                {
+                    feedItems.get(adapterPosition).likesCount--;
+                    notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
+                    if (context instanceof MainActivity) {
+                        ((MainActivity) context).showDislikedSnakebar();
+                    }
+                    if(context instanceof MyFeedActivity)
+                    {
+                        ((MyFeedActivity) context).showDislikedSnakebar();
+                    }
                 }
+                else
+                {
+                    feedItems.get(adapterPosition).likesCount++;
+                    notifyItemChanged(adapterPosition, ACTION_LIKE_IMAGE_CLICKED);
+                    if (context instanceof MainActivity) {
+                        ((MainActivity) context).showLikedSnackbar();
+                    }
+                    if(context instanceof MyFeedActivity)
+                    {
+                        ((MyFeedActivity) context).showLikedSnackbar();
+                    }
+                }
+
             }
         });
         cellFeedViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +153,15 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         } else {
             return VIEW_TYPE_DEFAULT;
         }
+    }
+
+    public FeedItem getFeedItem(int pos)
+    {
+        if(feedItems.size()>=pos)
+        {
+            return feedItems.get(pos);
+        }
+        return null;
     }
 
     @Override

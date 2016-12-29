@@ -364,6 +364,38 @@ namespace STWebService
             return list.ToArray();
         }
 
+        [WebMethod(Description = "insert comment")]
+        public bool insertComment(String user_id, String story_id, String content)
+        {
+            bool result = false;
+            int count = dbOperation.countComment();
+            if (count != -1)
+            {
+                string id = count.ToString();
+                while (id.Length < 5)
+                {
+                    id = "0" + id;
+                }
 
+                id = "C" + id;
+                result = dbOperation.insertComment(id, story_id, user_id, content);
+            }
+            return result;
+        }
+
+        [WebMethod(Description = "query comments by id")]
+        public string[] queryCommentByStoryID(String story_id)
+        {
+            List<Model.CommentModel> list = dbOperation.queryCommentByStoryID(story_id);
+            List<String> l = new List<string>();
+            foreach(var i in list)
+            {
+                l.Add(i.comment_id);
+                l.Add(i.user_id);
+                l.Add(story_id);
+                l.Add(i.content);
+            }
+            return l.ToArray();
+        }
     }
 }

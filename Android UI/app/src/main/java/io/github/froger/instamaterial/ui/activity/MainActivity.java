@@ -158,10 +158,13 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
 
     @Override
     public void onCommentsClick(View v, int position) {
+        FeedAdapter.FeedItem item = feedAdapter.getFeedItem(position);
+        String story_id = item.story_id;
         final Intent intent = new Intent(this, CommentsActivity.class);
         int[] startingLocation = new int[2];
         v.getLocationOnScreen(startingLocation);
         intent.putExtra(CommentsActivity.ARG_DRAWING_START_LOCATION, startingLocation[1]);
+        intent.putExtra(CommentsActivity.ARG_STORY_ID,story_id);
         startActivity(intent);
         overridePendingTransition(0, 0);
     }
@@ -213,6 +216,11 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
 
     public void showLikedSnackbar() {
         Snackbar.make(clContent, "Liked!", Snackbar.LENGTH_SHORT).show();
+    }
+
+    public void showDislikedSnakebar()
+    {
+        Snackbar.make(clContent, "Disliked!", Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
@@ -272,3 +280,14 @@ public class MainActivity extends BaseDrawerActivity implements FeedAdapter.OnFe
         }
     }
 }
+
+
+/*
+* Next Step: Gai myfeedactivity biao tou
+*
+*            gai profile 4 bu fen
+*
+*            gai zhao pian de shang chuan du qu
+*
+*            gai biao tou feng ge
+* */

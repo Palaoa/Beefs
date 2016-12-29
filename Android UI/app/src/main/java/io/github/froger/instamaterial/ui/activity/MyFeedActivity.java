@@ -218,6 +218,11 @@ public class MyFeedActivity extends BaseActivity implements FeedAdapter.OnFeedIt
         Snackbar.make(clContent, "Liked!", Snackbar.LENGTH_SHORT).show();
     }
 
+    public void showDislikedSnakebar()
+    {
+        Snackbar.make(clContent, "Disliked!", Snackbar.LENGTH_SHORT).show();
+    }
+
     @Override
     public void getResult(ArrayList<String> result)
     {
